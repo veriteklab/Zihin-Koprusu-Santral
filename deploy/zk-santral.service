@@ -1,0 +1,15 @@
+[Unit]
+Description=Zihin Koprusu Santral
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__WORKDIR__
+ExecStart=__WORKDIR__/baslat_santral.sh
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

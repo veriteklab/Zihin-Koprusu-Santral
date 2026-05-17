@@ -1,0 +1,14 @@
+birader_env/
+__pycache__/
+*.pyc
+loglar/*.log
+tor_veri/
+yedekler/
+.git/
+.claude/
+web/node_modules/
+ai_ayar.json
+telegram_ayar.json
+uzuvlar.json
+hafiza.json
+hitap_ayar.json

@@ -1,0 +1,37 @@
+services:
+  zihin-koprusu:
+    build: .
+    image: zihin-koprusu:local
+    working_dir: /app
+    command: ["python", "tani.py"]
+    volumes:
+      - ./ai_ayar.json:/app/ai_ayar.json:ro
+      - ./telegram_ayar.json:/app/telegram_ayar.json:ro
+      - ./hitap_ayar.json:/app/hitap_ayar.json
+      - ./uzuvlar.json:/app/uzuvlar.json
+      - ./hafiza.json:/app/hafiza.json
+      - ./loglar:/app/loglar
+      - ./yedekler:/app/yedekler
+      - ./modeller:/app/modeller
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - GROQ_API_KEY=${GROQ_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+
+  zihin-gui-local:
+    build: .
+    image: zihin-koprusu:local
+    profiles: ["gui"]
+    working_dir: /app
+    command: ["./baslat.sh", "--gui"]
+    network_mode: host
+    ipc: host
+    devices:
+      - /dev/snd:/dev/snd
+    volumes:
+      - .:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1

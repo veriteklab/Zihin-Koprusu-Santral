@@ -1,0 +1,13 @@
+# Zihin Köprüsü – Otomatik oluşturuldu  (2026-05-16 07:44)
+
+SocksPort 19050
+ControlPort 19051
+DataDirectory /home/yabutsa06/zk/tor_veri
+Log notice file /home/yabutsa06/zk/tor_veri/tor.log
+
+# ── Zihin Köprüsü Hidden Services ─────────────────────────────
+HiddenServiceDir /home/yabutsa06/zk/tor_veri/hs_ssh
+HiddenServicePort 22 127.0.0.1:22
+
+HiddenServiceDir /home/yabutsa06/zk/tor_veri/hs_web
+HiddenServicePort 80 127.0.0.1:8765

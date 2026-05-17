@@ -1,0 +1,25 @@
+Zihin Koprusu Istemci Uretim Raporu
+===================================
+
+Uzuv ID: macos_ssh_ajan
+Uzuv Adi: macOS SSH Ajan
+Hedef Tip: mac
+Baglanti Modu: ssh_reverse
+Istenen Paket: PY
+Gercek Derleme: EVET
+
+Durum: KAYNAK PAKETI HAZIR
+
+Not:
+Bu klasorde calisabilir istemci kaynaklari ve kurulum dosyalari hazirlandi.
+Secilen mod icin calisabilir kaynak istemci dosyalari uretildi.
+
+Uretilen dosyalar:
+- zk_macos_ssh_ajan.py
+- kur_macos_ssh_ajan_macos.sh
+- kaldir_macos_ssh_ajan_macos.sh
+
+Dagitim:
+- Tek klasor yerine DAGITIM_PAKETI.zip dosyasini kullanabilirsiniz.
+- Gercek .apk/.exe gerekiyorsa bu paketi derleme ortaminda tekrar acin.
+

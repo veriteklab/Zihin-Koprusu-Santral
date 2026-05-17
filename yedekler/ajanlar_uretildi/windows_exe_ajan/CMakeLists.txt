@@ -1,0 +1,4 @@
+cmake_minimum_required(VERSION 3.15)
+project(ZihinKoprusu)
+add_executable(zk_windows_exe_ajan zk_windows_exe_ajan.cpp)
+target_link_libraries(zk_windows_exe_ajan ws2_32)

@@ -1,0 +1,37 @@
+{
+  "cihaz_adi": "zk-santral-merkez",
+  "sunucu": {
+    "host": "0.0.0.0",
+    "port": 8767,
+    "erisim_tokeni": "degistir-beni-uzun-rastgele-token"
+  },
+  "telegram": {
+    "etkin": true,
+    "ayar_dosyasi": "telegram_ayar.json",
+    "varsayilan_chat_id": ""
+  },
+  "stt": {
+    "etkin": true,
+    "model_yolu": "modeller/vosk-tr/vosk-model-small-tr-0.3",
+    "ffmpeg_bul": true
+  },
+  "tts": {
+    "etkin": true,
+    "motor": "piper",
+    "piper_model": "modeller/piper-tr/tr_TR-dfki-medium.onnx",
+    "edge_ses": "tr-TR-AhmetNeural",
+    "gtts_dil": "tr"
+  },
+  "davranis": {
+    "auto_transkript": true,
+    "telegrama_ses_dosyasi_gonder": true,
+    "telegrama_transkript_gonder": true,
+    "olay_logu": true
+  },
+  "depo": {
+    "kok_dizin": "veri/santral",
+    "cagri_dizin": "cagrilar",
+    "prompt_dizin": "anonslar",
+    "akis_dosyasi": "santral_akislari.ornek.json"
+  }
+}

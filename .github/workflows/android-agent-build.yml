@@ -1,0 +1,90 @@
+name: android-agent-build
+
+on:
+  workflow_dispatch:
+    inputs:
+      server_url:
+        description: "Santral server URL"
+        required: false
+        default: ""
+      device_id:
+        description: "Android agent device id"
+        required: false
+        default: ""
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - "android-agent/**"
+      - ".github/workflows/android-agent-build.yml"
+
+jobs:
+  build-agent:
+    runs-on: ubuntu-latest
+    env:
+      ZK_SERVER_URL: ${{ inputs.server_url != '' && inputs.server_url || vars.ZK_AGENT_SERVER_URL }}
+      ZK_DEVICE_ID: ${{ inputs.device_id != '' && inputs.device_id || vars.ZK_AGENT_DEVICE_ID }}
+      ZK_TOKEN: ${{ secrets.ZK_AGENT_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install SDK packages
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Validate build configuration
+        run: |
+          test -n "$ZK_SERVER_URL" || { echo "ZK_SERVER_URL eksik"; exit 1; }
+          test -n "$ZK_DEVICE_ID" || { echo "ZK_DEVICE_ID eksik"; exit 1; }
+          test -n "$ZK_TOKEN" || { echo "ZK_AGENT_TOKEN eksik"; exit 1; }
+
+      - name: Build APK
+        working-directory: android-agent
+        run: |
+          chmod +x build_apk.sh
+          ./build_apk.sh
+
+      - name: Collect build metadata
+        run: |
+          mkdir -p android-agent/build/meta
+          {
+            echo "workflow=${GITHUB_WORKFLOW}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_number=${GITHUB_RUN_NUMBER}"
+            echo "sha=${GITHUB_SHA}"
+            echo "server_url=${ZK_SERVER_URL}"
+            echo "device_id=${ZK_DEVICE_ID}"
+          } > android-agent/build/meta/build-info.txt
+          sha256sum android-agent/build/zk-santral-agent-debug.apk > android-agent/build/meta/sha256.txt
+
+      - name: Create release bundle
+        run: |
+          mkdir -p android-agent/build/bundle
+          cp android-agent/build/zk-santral-agent-debug.apk android-agent/build/bundle/
+          cp android-agent/build/meta/build-info.txt android-agent/build/bundle/
+          cp android-agent/build/meta/sha256.txt android-agent/build/bundle/
+          cp android-agent/README.md android-agent/build/bundle/README-android-agent.md
+          cd android-agent/build
+          zip -r zk-santral-agent-bundle.zip bundle >/dev/null
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: zk-santral-agent-debug-apk
+          path: |
+            android-agent/build/zk-santral-agent-debug.apk
+            android-agent/build/meta/build-info.txt
+            android-agent/build/meta/sha256.txt
+            android-agent/build/zk-santral-agent-bundle.zip
+          if-no-files-found: error
+          retention-days: 14

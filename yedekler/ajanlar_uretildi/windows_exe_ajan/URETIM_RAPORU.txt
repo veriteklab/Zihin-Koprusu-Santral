@@ -1,0 +1,22 @@
+Zihin Koprusu Istemci Uretim Raporu
+===================================
+
+Uzuv ID: windows_exe_ajan
+Uzuv Adi: Windows EXE Ajan
+Hedef Tip: windows
+Baglanti Modu: ssh_reverse
+Istenen Paket: EXE
+Gercek Derleme: EVET
+
+Durum: BASARILI
+Gercek paket hazirlandi: zk_windows_exe_ajan.exe
+
+Uretilen dosyalar:
+- zk_windows_exe_ajan.exe
+- kur_exe.bat
+- kaldir_exe.bat
+
+Dagitim:
+- Tek klasor yerine DAGITIM_PAKETI.zip dosyasini kullanabilirsiniz.
+- Gercek .apk/.exe gerekiyorsa bu paketi derleme ortaminda tekrar acin.
+

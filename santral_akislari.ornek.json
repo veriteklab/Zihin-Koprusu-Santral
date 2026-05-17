@@ -1,0 +1,33 @@
+{
+  "akislar": {
+    "varsayilan": {
+      "ad": "Varsayilan Karsilama",
+      "karsilama": "Merhaba. Zihin Koprusu Santral hattina ulastiniz.",
+      "zaman_asimi_saniye": 8,
+      "varsayilan_eylem": "voice_note",
+      "secenekler": [
+        {
+          "tus": "1",
+          "etiket": "Telegram bildirimi",
+          "eylem": "telegram_notify",
+          "hedef": "varsayilan",
+          "bildirim": "Arayan kisi Telegram uyarisi istedi."
+        },
+        {
+          "tus": "2",
+          "etiket": "Sesli not birakma",
+          "eylem": "voice_note",
+          "hedef": "kayit",
+          "bildirim": "Arayan kisi sesli not birakmak istiyor."
+        },
+        {
+          "tus": "3",
+          "etiket": "Geri arama talebi",
+          "eylem": "callback_request",
+          "hedef": "geri_arama",
+          "bildirim": "Arayan kisi geri aranmak istiyor."
+        }
+      ]
+    }
+  }
+}

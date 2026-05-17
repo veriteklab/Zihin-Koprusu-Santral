@@ -1,0 +1,929 @@
+{
+  "makrolar": {
+    "41efea36": {
+      "id": "41efea36",
+      "ad": "Yeni Makro 41efea36",
+      "aciklama": "",
+      "adimlar": [],
+      "tetik_tipi": "manuel",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "gunaydin": {
+      "id": "gunaydin",
+      "ad": "Günaydın Rutini",
+      "aciklama": "Hava, haber ve genel başlangıç akışı.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Günaydın. Sistem hazırlandı.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "curl -s --max-time 5 'wttr.in?format=3' || true",
+          "timeout": 8,
+          "hata_devam": true
+        },
+        {
+          "tip": "isle",
+          "deger": "haberler",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "07:30",
+      "gunler": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "günaydın",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "gece_modu": {
+      "id": "gece_modu",
+      "ad": "Gece Modu",
+      "aciklama": "Sesi ve parlaklığı düşürür.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "amixer set Master 20% 2>/dev/null || pactl set-sink-volume @DEFAULT_SINK@ 20% 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "brightnessctl set 30% 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "konusma",
+          "deger": "Gece modu aktif.",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "gece modu",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "calisma_modu": {
+      "id": "calisma_modu",
+      "ad": "Çalışma Modu",
+      "aciklama": "Ses, parlaklık ve çalışma ortamını hazırlar.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "amixer set Master 45% 2>/dev/null || pactl set-sink-volume @DEFAULT_SINK@ 45% 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "brightnessctl set 75% 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "notify-send 'Zihin Köprüsü' 'Çalışma modu hazır.' 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "konusma",
+          "deger": "Çalışma modu hazır.",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "çalışma modu",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "toplanti_modu": {
+      "id": "toplanti_modu",
+      "ad": "Toplantı Modu",
+      "aciklama": "Sistemi sessize alır, bildirim verir.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "amixer set Master mute 2>/dev/null || pactl set-sink-mute @DEFAULT_SINK@ 1 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "notify-send 'Zihin Köprüsü' 'Toplantı modu aktif.' 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "konusma",
+          "deger": "Toplantı modu aktif. Ses kapatıldı.",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "toplantı modu",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "mola_modu": {
+      "id": "mola_modu",
+      "ad": "Mola Modu",
+      "aciklama": "Kısa mola hatırlatıcısı ve sakinleştirme.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "amixer set Master 30% 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "notify-send 'Zihin Köprüsü' 'Mola zamanı. 5 dakika gözlerini dinlendir.' 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "konusma",
+          "deger": "Mola zamanı. Beş dakika gözlerini dinlendir.",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "mola modu",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "sistem_kontrol": {
+      "id": "sistem_kontrol",
+      "ad": "Sistem Kontrol Özeti",
+      "aciklama": "CPU, RAM, disk ve sıcaklığı raporlar.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Sistem kontrolü başlatıldı.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "printf 'CPU:\\n'; top -bn1 | head -5; printf '\\nRAM:\\n'; free -h; printf '\\nDISK:\\n'; df -h /",
+          "timeout": 10,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "for f in /sys/class/thermal/thermal_zone*/temp /sys/class/hwmon/hwmon*/temp*_input; do [ -r \"$f\" ] && awk '{printf \"Sıcaklık: %.1f C\\n\", $1/1000}' \"$f\" && break; done",
+          "timeout": 5,
+          "hata_devam": true
+        },
+        {
+          "tip": "konusma",
+          "deger": "Sistem kontrolü tamamlandı.",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "sistem kontrol",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "uzuvlari_yokla": {
+      "id": "uzuvlari_yokla",
+      "ad": "Tüm Uzuvları Yokla",
+      "aciklama": "Merkezde kayıtlı uzuv durumlarını ister.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Uzuvlar yoklanıyor.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "isle",
+          "deger": "uzuv listesi",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "uzuvları yokla",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "tor_kontrol": {
+      "id": "tor_kontrol",
+      "ad": "Tor Kontrol",
+      "aciklama": "Tor servis ve onion durumunu kontrol eder.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "systemctl is-active tor 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "isle",
+          "deger": "tor durumu",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "manuel",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "telegram_kontrol": {
+      "id": "telegram_kontrol",
+      "ad": "Telegram Kontrol",
+      "aciklama": "Telegram bot durumunu kontrol eder.",
+      "adimlar": [
+        {
+          "tip": "isle",
+          "deger": "telegram durumu",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "notify-send 'Zihin Köprüsü' 'Telegram kontrolü istendi.' 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "manuel",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "yedek_al": {
+      "id": "yedek_al",
+      "ad": "Güvenli Yedek Al",
+      "aciklama": "Ayar ve proje yedeği başlatır.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Yedekleme başlatılıyor.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "isle",
+          "deger": "yedek al",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "yedek al",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "log_ozeti": {
+      "id": "log_ozeti",
+      "ad": "Log Özeti",
+      "aciklama": "Son hataları hızlı gösterir.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "find loglar -type f -maxdepth 1 2>/dev/null | xargs -r tail -n 40 2>/dev/null | grep -Ei 'HATA|KRİTİK|ERROR|CRITICAL' | tail -n 40 || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "manuel",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "internet_kontrol": {
+      "id": "internet_kontrol",
+      "ad": "İnternet Kontrol",
+      "aciklama": "DNS ve dış ağ erişimini kontrol eder.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "ping -c 1 -W 2 8.8.8.8 >/dev/null && echo 'IP erişimi var' || echo 'IP erişimi yok'",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "getent hosts google.com >/dev/null && echo 'DNS çalışıyor' || echo 'DNS çalışmıyor'",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "internet kontrol",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "disk_raporu": {
+      "id": "disk_raporu",
+      "ad": "Disk Raporu",
+      "aciklama": "Disk doluluk ve büyük klasör özetini verir.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "df -h /",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "du -sh ./* 2>/dev/null | sort -rh | head -10",
+          "timeout": 20,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "manuel",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "en_cok_cpu": {
+      "id": "en_cok_cpu",
+      "ad": "En Çok CPU Kullananlar",
+      "aciklama": "CPU tüketen ilk süreçleri listeler.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "ps aux --sort=-%cpu | head -8",
+          "timeout": 8,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "manuel",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "en_cok_ram": {
+      "id": "en_cok_ram",
+      "ad": "En Çok RAM Kullananlar",
+      "aciklama": "Bellek tüketen ilk süreçleri listeler.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "ps aux --sort=-%mem | head -8",
+          "timeout": 8,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "manuel",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "sicaklik_raporu": {
+      "id": "sicaklik_raporu",
+      "ad": "Sıcaklık Raporu",
+      "aciklama": "Cihaz sıcaklık sensörlerini okur.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "for f in /sys/class/thermal/thermal_zone*/temp /sys/class/hwmon/hwmon*/temp*_input; do [ -r \"$f\" ] && awk -v n=\"$f\" '{printf \"%s %.1f C\\n\", n, $1/1000}' \"$f\"; done | head -12",
+          "timeout": 8,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "manuel",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "ses_ac": {
+      "id": "ses_ac",
+      "ad": "Sesi Aç",
+      "aciklama": "Sesi %60 yapar ve mute kapatır.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "amixer set Master unmute 60% 2>/dev/null || pactl set-sink-mute @DEFAULT_SINK@ 0 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "sesi aç",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "ses_kis": {
+      "id": "ses_kis",
+      "ad": "Sesi Kıs",
+      "aciklama": "Sesi %25 seviyesine indirir.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "amixer set Master 25% 2>/dev/null || pactl set-sink-volume @DEFAULT_SINK@ 25% 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "sesi kıs",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "sessize_al": {
+      "id": "sessize_al",
+      "ad": "Sessize Al",
+      "aciklama": "Sistem sesini kapatır.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "amixer set Master mute 2>/dev/null || pactl set-sink-mute @DEFAULT_SINK@ 1 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "sessize al",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "parlaklik_artir": {
+      "id": "parlaklik_artir",
+      "ad": "Parlaklığı Artır",
+      "aciklama": "Ekran parlaklığını yükseltir.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "brightnessctl set +10% 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "parlaklığı artır",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "parlaklik_azalt": {
+      "id": "parlaklik_azalt",
+      "ad": "Parlaklığı Azalt",
+      "aciklama": "Ekran parlaklığını azaltır.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "brightnessctl set 10%- 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "parlaklığı azalt",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "ekran_kilitle": {
+      "id": "ekran_kilitle",
+      "ad": "Ekranı Kilitle",
+      "aciklama": "Oturumu kilitler.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "loginctl lock-session 2>/dev/null || gnome-screensaver-command -l 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "ekranı kilitle",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "panik_raporu": {
+      "id": "panik_raporu",
+      "ad": "Acil Durum Raporu",
+      "aciklama": "Sistem, ağ ve uzuv özetini hızlı toplar.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Acil durum raporu hazırlanıyor.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "date; hostname; hostname -I; df -h /; free -h; ps aux --sort=-%cpu | head -5",
+          "timeout": 15,
+          "hata_devam": true
+        },
+        {
+          "tip": "isle",
+          "deger": "uzuv listesi",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "sesli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "acil durum",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "haftalik_bakim": {
+      "id": "haftalik_bakim",
+      "ad": "Haftalık Bakım Raporu",
+      "aciklama": "Pazar akşamı sistem özet raporu üretir.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "df -h /; free -h; journalctl -p 3 -n 30 --no-pager 2>/dev/null || true",
+          "timeout": 20,
+          "hata_devam": true
+        },
+        {
+          "tip": "konusma",
+          "deger": "Haftalık bakım raporu hazırlandı.",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "zamanli",
+      "saat": "20:00",
+      "gunler": [
+        6
+      ],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": false,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "saatlik_saglik": {
+      "id": "saatlik_saglik",
+      "ad": "Saatlik Sağlık Kontrolü",
+      "aciklama": "Saatte bir hafif sistem kontrolü.",
+      "adimlar": [
+        {
+          "tip": "komut",
+          "deger": "date; uptime; df -h / | tail -1; free -h | awk '/Mem:/{print $3\"/\"$2}'",
+          "timeout": 8,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "aralikli",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": false,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "cpu_uyari": {
+      "id": "cpu_uyari",
+      "ad": "CPU Aşım Uyarısı",
+      "aciklama": "CPU %90 üstüne çıkınca uyarır.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Dikkat. İşlemci kullanımı yüksek.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "notify-send 'Zihin Köprüsü' 'CPU kullanımı kritik.' 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "ps aux --sort=-%cpu | head -6",
+          "timeout": 8,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "kosullu",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "cpu_asim",
+      "kosul_esik": 90.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "ram_uyari": {
+      "id": "ram_uyari",
+      "ad": "RAM Aşım Uyarısı",
+      "aciklama": "RAM %85 üstüne çıkınca uyarır.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Dikkat. Bellek kullanımı yüksek.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "notify-send 'Zihin Köprüsü' 'RAM kullanımı yüksek.' 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "ps aux --sort=-%mem | head -6",
+          "timeout": 8,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "kosullu",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "ram_asim",
+      "kosul_esik": 85.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "",
+      "calisma_sayisi": 0
+    },
+    "sicaklik_uyari": {
+      "id": "sicaklik_uyari",
+      "ad": "Sıcaklık Aşım Uyarısı",
+      "aciklama": "Sıcaklık 80 dereceyi geçince uyarır.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Dikkat. Sistem sıcaklığı yüksek.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "notify-send 'Zihin Köprüsü' 'Sistem sıcaklığı yüksek.' 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "kosullu",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "sicaklik",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "2026-04-27T23:08:17.051391",
+      "calisma_sayisi": 3
+    },
+    "pil_uyari": {
+      "id": "pil_uyari",
+      "ad": "Pil Uyarısı",
+      "aciklama": "Pil %15 altına düşünce uyarır.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Dikkat. Pil seviyesi kritik. Şarj edin.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "notify-send 'Zihin Köprüsü' 'Pil kritik. Şarj edin.' 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "kosullu",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "pil_dusuk",
+      "kosul_esik": 15.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "2026-05-10T19:41:02.027538",
+      "calisma_sayisi": 10
+    },
+    "internet_uyari": {
+      "id": "internet_uyari",
+      "ad": "İnternet Kesildi Uyarısı",
+      "aciklama": "Bağlantı kesilince uyarır.",
+      "adimlar": [
+        {
+          "tip": "konusma",
+          "deger": "Uyarı. İnternet bağlantısı kesildi.",
+          "timeout": 30,
+          "hata_devam": true
+        },
+        {
+          "tip": "komut",
+          "deger": "notify-send 'Zihin Köprüsü' 'İnternet bağlantısı kesildi.' 2>/dev/null || true",
+          "timeout": 30,
+          "hata_devam": true
+        }
+      ],
+      "tetik_tipi": "kosullu",
+      "saat": "",
+      "gunler": [],
+      "aralik_dakika": 60,
+      "kosul_tipi": "internet_yok",
+      "kosul_esik": 80.0,
+      "kosul_uzuv_id": "",
+      "sesli_kelime": "",
+      "aktif": true,
+      "son_calisma": "2026-05-02T00:07:59.473929",
+      "calisma_sayisi": 12
+    }
+  }
+}

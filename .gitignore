@@ -1,0 +1,17 @@
+birader_env/
+__pycache__/
+*.py[cod]
+loglar/*.log
+tor_veri/hs_ssh/
+tor_veri/hs_web/
+tor_veri/tor.log
+ai_ayar.json
+telegram_ayar.json
+uzuvlar.json
+zihin/ai_ayar.json
+zihin/telegram_ayar.json
+zihin/uzuvlar.json
+modeller/
+veri/santral/
+santral_ayar.json
+android-agent/build/

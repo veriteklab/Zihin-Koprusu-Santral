@@ -1,0 +1,56 @@
+{
+  "sistem": {
+    "hazir": "Zihin Köprüsü hazır.",
+    "anlamadim": "Anlayamadım, tekrar söyler misin?",
+    "hata": "Bir hata oluştu.",
+    "devir": "{bilinc} devralıyor.",
+    "basladi": "Sistem başladı.",
+    "durdu": "Sistem durduruldu.",
+    "ses_kesildi": "Ses kesildi.",
+    "komut_yok": "Bu komut bulunamadı.",
+    "uzuv_yok": "Hedef uzuv bulunamadı.",
+    "ai_yok": "AI şu an aktif değil.",
+    "bekle": "Bir saniye.",
+    "tamam": "Tamam."
+  },
+  "sohbet": {
+    "merhaba": [
+      "Merhaba!",
+      "Buyur.",
+      "Evet?",
+      "Burdayım."
+    ],
+    "nasilsin": [
+      "İyiyim, sen?",
+      "Gayet iyi.",
+      "İyi sayılırım."
+    ],
+    "tesekkur": [
+      "Rica ederim.",
+      "Ne demek.",
+      "Her zaman."
+    ],
+    "tamam": [
+      "Anlaşıldı.",
+      "Tamam.",
+      "Oldu."
+    ],
+    "aferin": [
+      "Teşekkürler.",
+      "Ne demek.",
+      "Elimden geleni yapıyorum."
+    ],
+    "iyi_gece": [
+      "İyi geceler.",
+      "Görüşürüz.",
+      "Dinlen iyi."
+    ]
+  },
+  "hata": {
+    "tor_yok": "Tor bağlantısı yok.",
+    "model_yok": "Ses modeli bulunamadı.",
+    "mikrofon_yok": "Mikrofon erişilemiyor.",
+    "internet_yok": "İnternet bağlantısı yok.",
+    "izin_yok": "Bu işlem için yetkin yok."
+  }
+}

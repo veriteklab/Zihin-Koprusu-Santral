@@ -1,0 +1,1840 @@
+{
+  "__meta__": {
+    "surum": "7.0",
+    "aciklama": "Zihin Köprüsü — Doğal Türkçe komut veritabanı"
+  },
+  "sohbet_merhaba": {
+    "id": "sohbet_merhaba",
+    "kategori": "Sohbet",
+    "ad": "Merhaba",
+    "tetikleyiciler": [
+      "merhaba",
+      "selam",
+      "hey",
+      "sa",
+      "mrb",
+      "selamun aleyküm"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Merhaba! Ne yapıyoruz?",
+    "yanit_alternatif": [
+      "Selamlar! Emrin nedir?",
+      "Evet, buradayım.",
+      "Buyur."
+    ],
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_nasilsin": {
+    "id": "sohbet_nasilsin",
+    "kategori": "Sohbet",
+    "ad": "Nasılsın",
+    "tetikleyiciler": [
+      "nasılsın",
+      "ne haber",
+      "naber",
+      "iyi misin",
+      "keyifler nasıl"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "İyiyim, teşekkürler. Sen nasılsın?",
+    "yanit_alternatif": [
+      "Gayet iyi, yardıma hazırım.",
+      "Fena değilim. Ne lazım?"
+    ],
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_tesekkur": {
+    "id": "sohbet_tesekkur",
+    "kategori": "Sohbet",
+    "ad": "Teşekkür",
+    "tetikleyiciler": [
+      "teşekkür",
+      "teşekkürler",
+      "sağ ol",
+      "eyvallah",
+      "çok sağ ol",
+      "mersi"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Rica ederim.",
+    "yanit_alternatif": [
+      "Ne demek.",
+      "Her zaman.",
+      "Bir şey değil."
+    ],
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_tamam": {
+    "id": "sohbet_tamam",
+    "kategori": "Sohbet",
+    "ad": "Tamam",
+    "tetikleyiciler": [
+      "tamam",
+      "anladım",
+      "peki",
+      "olur",
+      "tamamdır",
+      "okay",
+      "ok"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Anlaşıldı.",
+    "yanit_alternatif": [
+      "Tamam.",
+      "Oldu.",
+      "Peki."
+    ],
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_iyi_gece": {
+    "id": "sohbet_iyi_gece",
+    "kategori": "Sohbet",
+    "ad": "İyi Geceler",
+    "tetikleyiciler": [
+      "iyi geceler",
+      "görüşürüz",
+      "hoşça kal",
+      "bay bay",
+      "kapatıyorum",
+      "kapanıyorum"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "İyi geceler. İhtiyaç duyarsan burdayım.",
+    "yanit_alternatif": [
+      "Görüşürüz.",
+      "İyi geceler.",
+      "Dinlen iyi."
+    ],
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_gunaydın": {
+    "id": "sohbet_gunaydın",
+    "kategori": "Sohbet",
+    "ad": "Günaydın",
+    "tetikleyiciler": [
+      "günaydın",
+      "iyi sabahlar",
+      "iyi günler",
+      "iyi akşamlar"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Günaydın! Bugün ne yapalım?",
+    "yanit_alternatif": [
+      "İyi sabahlar! Nasıl yardımcı olabilirim?"
+    ],
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_sen_kimsin": {
+    "id": "sohbet_sen_kimsin",
+    "kategori": "Sohbet",
+    "ad": "Kimsin",
+    "tetikleyiciler": [
+      "sen kimsin",
+      "ne yaparsın",
+      "hakkında",
+      "kendini tanıt",
+      "kim olduğunu anlat"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Ben Zihin Köprüsü. Sesli komutlarla sistem yönetimi, uzak cihaz kontrolü, web otomasyonu yapıyorum. Ne yapmamı istersin?",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_yetenekler": {
+    "id": "sohbet_yetenekler",
+    "kategori": "Sohbet",
+    "ad": "Yetenekler",
+    "tetikleyiciler": [
+      "ne yapabilirsin",
+      "neler yapabilirsin",
+      "yeteneklerin neler",
+      "ne biliyorsun",
+      "nelere yardım edebilirsin"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Sistem izleme, uygulama yönetimi, web kontrolü, dosya işlemleri, uzak cihaz bağlantısı, makro ve rutin çalıştırma, not alma, takvim ve hava durumu. Aklına takılan bir şey var mı?",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_dur": {
+    "id": "sohbet_dur",
+    "kategori": "Sohbet",
+    "ad": "Dur",
+    "tetikleyiciler": [
+      "dur",
+      "bekle",
+      "dur bir dakika",
+      "dur bakalım",
+      "hopa"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Tamam, bekliyorum.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_aferin": {
+    "id": "sohbet_aferin",
+    "kategori": "Sohbet",
+    "ad": "Aferin",
+    "tetikleyiciler": [
+      "aferin",
+      "bravo",
+      "çok iyi",
+      "harika iş",
+      "süper",
+      "mükemmel"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Teşekkürler.",
+    "yanit_alternatif": [
+      "Ne demek.",
+      "Elimden geleni yapıyorum."
+    ],
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_yanlis": {
+    "id": "sohbet_yanlis",
+    "kategori": "Sohbet",
+    "ad": "Yanlış Anladın",
+    "tetikleyiciler": [
+      "yanlış anladın",
+      "hayır o değil",
+      "öyle değil",
+      "tekrar söyle",
+      "yanlış yaptın"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Pardon, yanlış anladım. Tekrar söyler misin?",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_evet": {
+    "id": "sohbet_evet",
+    "kategori": "Sohbet",
+    "ad": "Evet",
+    "tetikleyiciler": [
+      "evet",
+      "tabi",
+      "tabii",
+      "kesinlikle",
+      "aynen",
+      "doğru"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Anlaşıldı.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_hayır": {
+    "id": "sohbet_hayır",
+    "kategori": "Sohbet",
+    "ad": "Hayır",
+    "tetikleyiciler": [
+      "hayır",
+      "yok",
+      "istemiyorum",
+      "gerek yok",
+      "vazgeç"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Tamam, iptal ettim.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sistem_cpu": {
+    "id": "sistem_cpu",
+    "kategori": "Sistem",
+    "ad": "İşlemci",
+    "tetikleyiciler": [
+      "işlemci durumu",
+      "cpu ne kadar",
+      "işlemci kullanımı",
+      "cpu kullanımı",
+      "işlemci yüzde",
+      "cpu durumu",
+      "cpu kaç",
+      "cpu yüzde kaç",
+      "işlemci kaç",
+      "işlemci yüzde kaç"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "cpu",
+    "komut_windows": "cpu",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sistem_ram": {
+    "id": "sistem_ram",
+    "kategori": "Sistem",
+    "ad": "Bellek",
+    "tetikleyiciler": [
+      "bellek durumu",
+      "ram ne kadar",
+      "bellek kullanımı",
+      "ram kullanımı",
+      "ram doldu mu",
+      "bellek doldu mu",
+      "ram durumu",
+      "ram kaç",
+      "ram yüzde kaç",
+      "bellek yüzde kaç",
+      "hafıza durumu",
+      "hafıza ne kadar"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "ram",
+    "komut_windows": "ram",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sistem_disk": {
+    "id": "sistem_disk",
+    "kategori": "Sistem",
+    "ad": "Disk",
+    "tetikleyiciler": [
+      "disk durumu",
+      "disk ne kadar dolu",
+      "depolama",
+      "disk doldu mu",
+      "disk alanı",
+      "boş alan ne kadar",
+      "disk yüzde kaç",
+      "depolama durumu",
+      "boş yer ne kadar",
+      "diskte yer var mı"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "disk",
+    "komut_windows": "disk",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sistem_sicaklik": {
+    "id": "sistem_sicaklik",
+    "kategori": "Sistem",
+    "ad": "Sıcaklık",
+    "tetikleyiciler": [
+      "sıcaklık ne kadar",
+      "sistem sıcak mı",
+      "işlemci sıcaklığı",
+      "kaç derece",
+      "ısındı mı",
+      "sıcaklık durumu",
+      "sıcaklık kaç",
+      "kaç dereceyiz",
+      "pc kaç derece",
+      "bilgisayar sıcaklığı"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "sicaklik",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "sistem_pil": {
+    "id": "sistem_pil",
+    "kategori": "Sistem",
+    "ad": "Pil",
+    "tetikleyiciler": [
+      "pil ne kadar",
+      "batarya durumu",
+      "şarj ne kadar",
+      "pil bitti mi",
+      "şarjda mı",
+      "ne kadar şarj var",
+      "pil durumu",
+      "batarya ne kadar",
+      "şarj durumu",
+      "pil yüzde kaç"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "pil",
+    "komut_windows": "pil",
+    "komut_android": "pil",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sistem_ag": {
+    "id": "sistem_ag",
+    "kategori": "Sistem",
+    "ad": "Ağ",
+    "tetikleyiciler": [
+      "ağ durumu",
+      "ip adresi nedir",
+      "ağ bağlı mı",
+      "bağlantı var mı",
+      "internet bağlantısı",
+      "internet durumu",
+      "ağ kontrol",
+      "bağlantı durumu",
+      "ip adresim ne"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "ag",
+    "komut_windows": "ag",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sistem_uptime": {
+    "id": "sistem_uptime",
+    "kategori": "Sistem",
+    "ad": "Çalışma Süresi",
+    "tetikleyiciler": [
+      "ne zamandır açık",
+      "çalışma süresi",
+      "kaç saattir açık",
+      "ne zamandır çalışıyor"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "uptime",
+    "komut_windows": "uptime",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sistem_ozet": {
+    "id": "sistem_ozet",
+    "kategori": "Sistem",
+    "ad": "Sistem Özeti",
+    "tetikleyiciler": [
+      "sistem durumu",
+      "genel durum",
+      "her şey nasıl",
+      "sistem raporu",
+      "durumu anlat",
+      "durum nedir"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "ozet",
+    "komut_windows": "ozet",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sistem_acik_uygulamalar": {
+    "id": "sistem_acik_uygulamalar",
+    "kategori": "Sistem",
+    "ad": "Açık Uygulamalar",
+    "tetikleyiciler": [
+      "hangi uygulamalar açık",
+      "açık programlar",
+      "ne çalışıyor",
+      "arka planda ne var",
+      "ne açık şu an"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "acik_uygulamalar",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "sistem_wifi": {
+    "id": "sistem_wifi",
+    "kategori": "Sistem",
+    "ad": "WiFi",
+    "tetikleyiciler": [
+      "wifi nedir",
+      "hangi ağdayım",
+      "bağlı olduğum ağ",
+      "wifi adı ne",
+      "wifi bilgisi"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "wifi",
+    "komut_windows": "wifi",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sistem_internet_test": {
+    "id": "sistem_internet_test",
+    "kategori": "Sistem",
+    "ad": "İnternet Testi",
+    "tetikleyiciler": [
+      "internet var mı",
+      "bağlantıyı test et",
+      "internet çalışıyor mu",
+      "ping at",
+      "interneti test et"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "internet_test",
+    "komut_windows": "internet_test",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "bilgi_saat": {
+    "id": "bilgi_saat",
+    "kategori": "Bilgi",
+    "ad": "Saat",
+    "tetikleyiciler": [
+      "saat kaç",
+      "saat nedir",
+      "şu an kaç",
+      "kaç oldu",
+      "zaman nedir"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "saat",
+    "komut_windows": "saat",
+    "komut_android": "saat",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "bilgi_tarih": {
+    "id": "bilgi_tarih",
+    "kategori": "Bilgi",
+    "ad": "Tarih",
+    "tetikleyiciler": [
+      "bugün ne günü",
+      "tarih ne",
+      "bugünün tarihi",
+      "hangi gün",
+      "tarih kaç"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "tarih",
+    "komut_windows": "tarih",
+    "komut_android": "tarih",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "bilgi_hava": {
+    "id": "bilgi_hava",
+    "kategori": "Bilgi",
+    "ad": "Hava Durumu",
+    "tetikleyiciler": [
+      "hava nasıl",
+      "hava durumu",
+      "yağmur yağar mı",
+      "dışarısı nasıl",
+      "bugün kaç derece"
+    ],
+    "tur": "hava",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "bilgi_takvim": {
+    "id": "bilgi_takvim",
+    "kategori": "Bilgi",
+    "ad": "Takvim",
+    "tetikleyiciler": [
+      "bugün ne var",
+      "takvim",
+      "etkinliklerim",
+      "programım nedir",
+      "bugünkü planlar",
+      "bu hafta ne var"
+    ],
+    "tur": "takvim",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_tarayici": {
+    "id": "uygulama_tarayici",
+    "kategori": "Uygulama",
+    "ad": "Tarayıcı",
+    "tetikleyiciler": [
+      "tarayıcı aç",
+      "chrome aç",
+      "firefox aç",
+      "interneti aç",
+      "browseri aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open https://google.com",
+    "komut_windows": "start chrome",
+    "komut_android": "",
+    "yanit": "Tarayıcı açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_youtube": {
+    "id": "uygulama_youtube",
+    "kategori": "Uygulama",
+    "ad": "YouTube",
+    "tetikleyiciler": [
+      "youtube aç",
+      "youtube'u aç",
+      "videolara bak"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open https://youtube.com",
+    "komut_windows": "start https://youtube.com",
+    "komut_android": "",
+    "yanit": "YouTube açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_terminal": {
+    "id": "uygulama_terminal",
+    "kategori": "Uygulama",
+    "ad": "Terminal",
+    "tetikleyiciler": [
+      "terminal aç",
+      "konsol aç",
+      "komut satırı aç"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'for t in gnome-terminal xterm konsole xfce4-terminal; do command -v $t &>/dev/null && $t & break; done'",
+    "komut_windows": "start cmd",
+    "komut_android": "",
+    "yanit": "Terminal açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_dosya": {
+    "id": "uygulama_dosya",
+    "kategori": "Uygulama",
+    "ad": "Dosya Yöneticisi",
+    "tetikleyiciler": [
+      "dosya yöneticisi",
+      "dosyaları aç",
+      "klasörleri aç",
+      "dosyalara bak"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open ~",
+    "komut_windows": "explorer",
+    "komut_android": "",
+    "yanit": "Dosya yöneticisi açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_kapat": {
+    "id": "uygulama_kapat",
+    "kategori": "Uygulama",
+    "ad": "Pencereyi Kapat",
+    "tetikleyiciler": [
+      "kapat",
+      "pencereyi kapat",
+      "uygulamayı kapat",
+      "bunu kapat"
+    ],
+    "tur": "kabuk",
+    "komut": "xdotool getactivewindow windowkill",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Kapatıldı.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "uygulama_ekran_kilitle": {
+    "id": "uygulama_ekran_kilitle",
+    "kategori": "Uygulama",
+    "ad": "Ekranı Kilitle",
+    "tetikleyiciler": [
+      "ekranı kilitle",
+      "kilitle",
+      "ekranı kapat",
+      "lock"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'loginctl lock-session 2>/dev/null || gnome-screensaver-command --lock 2>/dev/null || xdg-screensaver lock'",
+    "komut_windows": "rundll32.exe user32.dll,LockWorkStation",
+    "komut_android": "",
+    "yanit": "Ekran kilitleniyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_spotify": {
+    "id": "uygulama_spotify",
+    "kategori": "Uygulama",
+    "ad": "Spotify",
+    "tetikleyiciler": [
+      "spotify aç",
+      "müzik aç",
+      "spotify'ı aç"
+    ],
+    "tur": "kabuk",
+    "komut": "spotify &",
+    "komut_windows": "start spotify",
+    "komut_android": "",
+    "yanit": "Spotify açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_telegram": {
+    "id": "uygulama_telegram",
+    "kategori": "Uygulama",
+    "ad": "Telegram",
+    "tetikleyiciler": [
+      "telegram aç",
+      "telegram masaüstü",
+      "mesajlaşmayı aç"
+    ],
+    "tur": "kabuk",
+    "komut": "telegram-desktop &",
+    "komut_windows": "start telegram",
+    "komut_android": "",
+    "yanit": "Telegram açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_vscode": {
+    "id": "uygulama_vscode",
+    "kategori": "Uygulama",
+    "ad": "VS Code",
+    "tetikleyiciler": [
+      "vscode aç",
+      "kod editörü aç",
+      "editörü aç"
+    ],
+    "tur": "kabuk",
+    "komut": "code &",
+    "komut_windows": "start code",
+    "komut_android": "",
+    "yanit": "VS Code açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "ses_yuksel": {
+    "id": "ses_yuksel",
+    "kategori": "Ses",
+    "ad": "Sesi Yükselt",
+    "tetikleyiciler": [
+      "sesi yükselt",
+      "sesi aç",
+      "ses artır",
+      "daha yüksek"
+    ],
+    "tur": "kabuk",
+    "komut": "amixer -D pulse sset Master 10%+",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Ses yükseltildi.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ses_dusur": {
+    "id": "ses_dusur",
+    "kategori": "Ses",
+    "ad": "Sesi Düşür",
+    "tetikleyiciler": [
+      "sesi düşür",
+      "sesi kıs",
+      "ses azalt",
+      "daha alçak"
+    ],
+    "tur": "kabuk",
+    "komut": "amixer -D pulse sset Master 10%-",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Ses kısıldı.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ses_sustur": {
+    "id": "ses_sustur",
+    "kategori": "Ses",
+    "ad": "Sesi Sustur",
+    "tetikleyiciler": [
+      "sesi sustur",
+      "mute",
+      "sesi kapat",
+      "sessiz yap"
+    ],
+    "tur": "kabuk",
+    "komut": "amixer -D pulse sset Master toggle",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Ses susturuldu.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ekran_goruntu": {
+    "id": "ekran_goruntu",
+    "kategori": "Ekran",
+    "ad": "Ekran Görüntüsü",
+    "tetikleyiciler": [
+      "ekran görüntüsü al",
+      "screenshot al",
+      "ekranı fotoğrafla",
+      "ekranı yakala"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'd=~/Masaüstü; [ -d $d ] || d=~/Desktop; scrot $d/ekran_$(date +%Y%m%d_%H%M%S).png 2>/dev/null || import -window root $d/ekran_$(date +%Y%m%d_%H%M%S).png'",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Ekran görüntüsü masaüstüne kaydedildi.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ekran_parlaklik_artir": {
+    "id": "ekran_parlaklik_artir",
+    "kategori": "Ekran",
+    "ad": "Parlaklık Artır",
+    "tetikleyiciler": [
+      "parlaklığı artır",
+      "ekranı aydınlat",
+      "daha parlak"
+    ],
+    "tur": "kabuk",
+    "komut": "brightnessctl set +20% 2>/dev/null || xrandr --output $(xrandr | grep ' connected' | head -1 | awk '{print $1}') --brightness 1.0",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Parlaklık artırıldı.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ekran_parlaklik_dusur": {
+    "id": "ekran_parlaklik_dusur",
+    "kategori": "Ekran",
+    "ad": "Parlaklık Düşür",
+    "tetikleyiciler": [
+      "parlaklığı düşür",
+      "ekranı karart",
+      "daha karanlık"
+    ],
+    "tur": "kabuk",
+    "komut": "brightnessctl set 20%- 2>/dev/null || xrandr --output $(xrandr | grep ' connected' | head -1 | awk '{print $1}') --brightness 0.5",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Parlaklık düşürüldü.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "dosya_masaustu": {
+    "id": "dosya_masaustu",
+    "kategori": "Dosya",
+    "ad": "Masaüstü",
+    "tetikleyiciler": [
+      "masaüstünü aç",
+      "masaüstüne git",
+      "masaüstü"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open ~/Masaüstü 2>/dev/null || xdg-open ~/Desktop",
+    "komut_windows": "explorer %USERPROFILE%\\Desktop",
+    "komut_android": "",
+    "yanit": "Masaüstü açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "dosya_indirilenler": {
+    "id": "dosya_indirilenler",
+    "kategori": "Dosya",
+    "ad": "İndirilenler",
+    "tetikleyiciler": [
+      "indirilenler klasörü",
+      "downloads aç",
+      "indirilen dosyalar"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open ~/İndirilenler 2>/dev/null || xdg-open ~/Downloads",
+    "komut_windows": "explorer %USERPROFILE%\\Downloads",
+    "komut_android": "",
+    "yanit": "İndirilenler açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "dosya_belgeler": {
+    "id": "dosya_belgeler",
+    "kategori": "Dosya",
+    "ad": "Belgeler",
+    "tetikleyiciler": [
+      "belgeler klasörü",
+      "documents aç",
+      "belgelerim"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open ~/Belgeler 2>/dev/null || xdg-open ~/Documents",
+    "komut_windows": "explorer %USERPROFILE%\\Documents",
+    "komut_android": "",
+    "yanit": "Belgeler açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "not_al": {
+    "id": "not_al",
+    "kategori": "Hafıza",
+    "ad": "Not Al",
+    "tetikleyiciler": [
+      "not al",
+      "bunu kaydet",
+      "hatırla bunu",
+      "not et"
+    ],
+    "tur": "hafiza",
+    "komut": "not_al",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "not_goster": {
+    "id": "not_goster",
+    "kategori": "Hafıza",
+    "ad": "Notları Göster",
+    "tetikleyiciler": [
+      "notlarımı göster",
+      "ne not aldım",
+      "kayıtlarımı oku",
+      "notlarım ne"
+    ],
+    "tur": "hafiza",
+    "komut": "not_listele",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "guvenlik_tor_baslat": {
+    "id": "guvenlik_tor_baslat",
+    "kategori": "Güvenlik",
+    "ad": "Tor Başlat",
+    "tetikleyiciler": [
+      "tor başlat",
+      "anonim bağlan",
+      "tor'u aç",
+      "gizli bağlan"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "tor_baslat",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "guvenlik_onion": {
+    "id": "guvenlik_onion",
+    "kategori": "Güvenlik",
+    "ad": "Onion Adresi",
+    "tetikleyiciler": [
+      "onion adresim ne",
+      "onion adresini söyle",
+      "benim adresim ne",
+      "gizli adresim"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "onion_adres",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "makro_gunaydın": {
+    "id": "makro_gunaydın",
+    "kategori": "Makro",
+    "ad": "Günaydın Rutini",
+    "tetikleyiciler": [
+      "günaydın rutini",
+      "sabah rutini",
+      "güne başla",
+      "sabah modu"
+    ],
+    "tur": "makro",
+    "komut": "gunaydın",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "makro_gece": {
+    "id": "makro_gece",
+    "kategori": "Makro",
+    "ad": "Gece Modu",
+    "tetikleyiciler": [
+      "gece modu",
+      "karanlık mod",
+      "uyku modu",
+      "gece modunu aç"
+    ],
+    "tur": "makro",
+    "komut": "gece_modu",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "guc_yeniden_baslat": {
+    "id": "guc_yeniden_baslat",
+    "kategori": "Güç",
+    "ad": "Yeniden Başlat",
+    "tetikleyiciler": [
+      "yeniden başlat",
+      "restart et",
+      "bilgisayarı yeniden başlat"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'sleep 3 && reboot'",
+    "komut_windows": "shutdown /r /t 3",
+    "komut_android": "",
+    "yanit": "3 saniye içinde yeniden başlatılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "guc_kapat": {
+    "id": "guc_kapat",
+    "kategori": "Güç",
+    "ad": "Kapat",
+    "tetikleyiciler": [
+      "bilgisayarı kapat",
+      "sistemi kapat",
+      "shutdown yap",
+      "kapat bilgisayarı"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'sleep 3 && poweroff'",
+    "komut_windows": "shutdown /s /t 3",
+    "komut_android": "",
+    "yanit": "3 saniye içinde kapanıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "guc_uyku": {
+    "id": "guc_uyku",
+    "kategori": "Güç",
+    "ad": "Uyku Modu",
+    "tetikleyiciler": [
+      "uyku moduna al",
+      "sleep",
+      "askıya al",
+      "bekleme moduna al"
+    ],
+    "tur": "kabuk",
+    "komut": "systemctl suspend",
+    "komut_windows": "rundll32.exe powrprof.dll,SetSuspendState 0,1,0",
+    "komut_android": "",
+    "yanit": "Uyku moduna geçiliyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uzuv_listele": {
+    "id": "uzuv_listele",
+    "kategori": "Uzuv",
+    "ad": "Uzuv Listesi",
+    "tetikleyiciler": [
+      "uzuvları listele",
+      "bağlı cihazlar",
+      "hangi uzuvlar var",
+      "uzuv listesi",
+      "cihazlar"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "uzuv_listesi",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_yardim": {
+    "id": "sohbet_yardim",
+    "kategori": "Sohbet",
+    "ad": "Yardım",
+    "tetikleyiciler": [
+      "yardım et",
+      "bana yardım et",
+      "ne demeliyim",
+      "hangi komutlar var",
+      "komutları say",
+      "sesli komutları anlat",
+      "beni yönlendir"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Sistem durumu, web arama, uygulama açma, dosya klasörleri, ses, ekran, not, makro ve uzuv komutlarını kullanabilirsin. Örneğin: sistem özeti, kromda haber ara, sesi yükselt, masaüstünü aç, uzuvları listele.",
+    "yanit_alternatif": [
+      "Örnek komutlar: saat kaç, ram durumu, google da hava ara, youtube aç, ekran görüntüsü al, not al, uzuvları listele."
+    ],
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_tekrar": {
+    "id": "sohbet_tekrar",
+    "kategori": "Sohbet",
+    "ad": "Tekrar",
+    "tetikleyiciler": [
+      "tekrar eder misin",
+      "bir daha söyle",
+      "duymadım",
+      "anlamadım tekrar",
+      "son cevabı tekrarla"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Son cevabı tekrar etme özelliği çekirdekte tutuluyor; komutu yeniden söylersen aynı cevabı veririm.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_beklemede": {
+    "id": "sohbet_beklemede",
+    "kategori": "Sohbet",
+    "ad": "Beklemede Kal",
+    "tetikleyiciler": [
+      "hazır bekle",
+      "beklemede kal",
+      "beni dinle",
+      "emir bekle",
+      "komut bekle"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Hazır bekliyorum.",
+    "yanit_alternatif": [
+      "Komut bekliyorum.",
+      "Dinlemedeyim."
+    ],
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "sohbet_kontrol_sende": {
+    "id": "sohbet_kontrol_sende",
+    "kategori": "Sohbet",
+    "ad": "Kontrol Sende",
+    "tetikleyiciler": [
+      "kontrol sende",
+      "emir komuta sende",
+      "sen devral",
+      "devamını sen getir",
+      "bunu sen yönet"
+    ],
+    "tur": "konusma",
+    "komut": "",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Kontrol bende. Net komut verirsen uygularım.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_hesap_makinesi": {
+    "id": "uygulama_hesap_makinesi",
+    "kategori": "Uygulama",
+    "ad": "Hesap Makinesi",
+    "tetikleyiciler": [
+      "hesap makinesi aç",
+      "makineyi aç",
+      "hesap aç",
+      "calculator aç"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'for a in gnome-calculator kcalc galculator xcalc; do command -v $a >/dev/null 2>&1 && $a >/dev/null 2>&1 & exit 0; done; exit 1'",
+    "komut_windows": "calc",
+    "komut_android": "",
+    "yanit": "Hesap makinesi açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_ayarlar": {
+    "id": "uygulama_ayarlar",
+    "kategori": "Uygulama",
+    "ad": "Ayarlar",
+    "tetikleyiciler": [
+      "ayarları aç",
+      "sistem ayarlarını aç",
+      "kontrol merkezini aç",
+      "settings aç"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'for a in gnome-control-center systemsettings xfce4-settings-manager mate-control-center; do command -v $a >/dev/null 2>&1 && $a >/dev/null 2>&1 & exit 0; done; exit 1'",
+    "komut_windows": "start ms-settings:",
+    "komut_android": "",
+    "yanit": "Ayarlar açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_sistem_izleyici": {
+    "id": "uygulama_sistem_izleyici",
+    "kategori": "Uygulama",
+    "ad": "Sistem İzleyici",
+    "tetikleyiciler": [
+      "sistem izleyiciyi aç",
+      "görev yöneticisini aç",
+      "işlemleri göster",
+      "performans ekranını aç"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'for a in gnome-system-monitor ksysguard xfce4-taskmanager mate-system-monitor htop top; do command -v $a >/dev/null 2>&1 && $a >/dev/null 2>&1 & exit 0; done; exit 1'",
+    "komut_windows": "taskmgr",
+    "komut_android": "",
+    "yanit": "Sistem izleyici açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_metin_editoru": {
+    "id": "uygulama_metin_editoru",
+    "kategori": "Uygulama",
+    "ad": "Metin Editörü",
+    "tetikleyiciler": [
+      "not defteri aç",
+      "metin editörü aç",
+      "yazı editörü aç",
+      "gedit aç"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'for a in gedit kate mousepad xed leafpad nano; do command -v $a >/dev/null 2>&1 && $a >/dev/null 2>&1 & exit 0; done; exit 1'",
+    "komut_windows": "notepad",
+    "komut_android": "",
+    "yanit": "Metin editörü açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_ofis": {
+    "id": "uygulama_ofis",
+    "kategori": "Uygulama",
+    "ad": "Ofis",
+    "tetikleyiciler": [
+      "ofisi aç",
+      "libreoffice aç",
+      "word aç",
+      "belge düzenleyici aç"
+    ],
+    "tur": "kabuk",
+    "komut": "bash -c 'for a in libreoffice lowriter abiword; do command -v $a >/dev/null 2>&1 && $a >/dev/null 2>&1 & exit 0; done; exit 1'",
+    "komut_windows": "start winword",
+    "komut_android": "",
+    "yanit": "Ofis uygulaması açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_mail": {
+    "id": "uygulama_mail",
+    "kategori": "Uygulama",
+    "ad": "E-posta",
+    "tetikleyiciler": [
+      "mail aç",
+      "e posta aç",
+      "eposta aç",
+      "gmail aç",
+      "posta kutumu aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open https://mail.google.com",
+    "komut_windows": "start https://mail.google.com",
+    "komut_android": "",
+    "yanit": "E-posta açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_whatsapp": {
+    "id": "uygulama_whatsapp",
+    "kategori": "Uygulama",
+    "ad": "WhatsApp",
+    "tetikleyiciler": [
+      "whatsapp aç",
+      "vatsap aç",
+      "watsap aç",
+      "whatsapp web aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open https://web.whatsapp.com",
+    "komut_windows": "start https://web.whatsapp.com",
+    "komut_android": "",
+    "yanit": "WhatsApp Web açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_haritalar": {
+    "id": "uygulama_haritalar",
+    "kategori": "Uygulama",
+    "ad": "Haritalar",
+    "tetikleyiciler": [
+      "haritayı aç",
+      "haritaları aç",
+      "google haritalar aç",
+      "maps aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open https://maps.google.com",
+    "komut_windows": "start https://maps.google.com",
+    "komut_android": "",
+    "yanit": "Haritalar açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_takvim_web": {
+    "id": "uygulama_takvim_web",
+    "kategori": "Uygulama",
+    "ad": "Takvim",
+    "tetikleyiciler": [
+      "takvimi aç",
+      "google takvim aç",
+      "calendar aç",
+      "programımı aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open https://calendar.google.com",
+    "komut_windows": "start https://calendar.google.com",
+    "komut_android": "",
+    "yanit": "Takvim açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_chatgpt": {
+    "id": "uygulama_chatgpt",
+    "kategori": "Uygulama",
+    "ad": "ChatGPT",
+    "tetikleyiciler": [
+      "chatgpt aç",
+      "çet gpt aç",
+      "yapay zekayı aç",
+      "gpt aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open https://chatgpt.com",
+    "komut_windows": "start https://chatgpt.com",
+    "komut_android": "",
+    "yanit": "ChatGPT açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_github": {
+    "id": "uygulama_github",
+    "kategori": "Uygulama",
+    "ad": "GitHub",
+    "tetikleyiciler": [
+      "github aç",
+      "git hap aç",
+      "kod depomu aç",
+      "github sayfasını aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open https://github.com",
+    "komut_windows": "start https://github.com",
+    "komut_android": "",
+    "yanit": "GitHub açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "uygulama_netflix": {
+    "id": "uygulama_netflix",
+    "kategori": "Uygulama",
+    "ad": "Netflix",
+    "tetikleyiciler": [
+      "netflix aç",
+      "netfiliks aç",
+      "film platformunu aç",
+      "dizi aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open https://netflix.com",
+    "komut_windows": "start https://netflix.com",
+    "komut_android": "",
+    "yanit": "Netflix açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "web_google_ara": {
+    "id": "web_google_ara",
+    "kategori": "Web",
+    "ad": "Google Arama",
+    "tetikleyiciler": [
+      "internette ara",
+      "google ara",
+      "gugılda ara",
+      "webde ara",
+      "bunu araştır"
+    ],
+    "tur": "web_arama",
+    "komut": "https://www.google.com/search?q={sorgu}",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "web_youtube_ara": {
+    "id": "web_youtube_ara",
+    "kategori": "Web",
+    "ad": "YouTube Arama",
+    "tetikleyiciler": [
+      "youtube ara",
+      "yutubda ara",
+      "youtube da ara",
+      "video ara",
+      "müzik ara"
+    ],
+    "tur": "web_arama",
+    "komut": "https://www.youtube.com/results?search_query={sorgu}",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "web_wikipedia_ara": {
+    "id": "web_wikipedia_ara",
+    "kategori": "Web",
+    "ad": "Wikipedia Arama",
+    "tetikleyiciler": [
+      "wikipedia ara",
+      "vikipedi ara",
+      "ansiklopedide ara",
+      "bilgi ara"
+    ],
+    "tur": "web_arama",
+    "komut": "https://tr.wikipedia.org/w/index.php?search={sorgu}",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "web_haber_ara": {
+    "id": "web_haber_ara",
+    "kategori": "Web",
+    "ad": "Haber Arama",
+    "tetikleyiciler": [
+      "haber ara",
+      "son haberleri ara",
+      "gündemi ara",
+      "haberlerde ara"
+    ],
+    "tur": "web_arama",
+    "komut": "https://news.google.com/search?q={sorgu}&hl=tr&gl=TR&ceid=TR:tr",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "dosya_ev": {
+    "id": "dosya_ev",
+    "kategori": "Dosya",
+    "ad": "Ev Klasörü",
+    "tetikleyiciler": [
+      "ev klasörünü aç",
+      "ana klasörü aç",
+      "home aç",
+      "kişisel klasörümü aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open ~",
+    "komut_windows": "explorer %USERPROFILE%",
+    "komut_android": "",
+    "yanit": "Ev klasörü açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "dosya_resimler": {
+    "id": "dosya_resimler",
+    "kategori": "Dosya",
+    "ad": "Resimler",
+    "tetikleyiciler": [
+      "resimler klasörü",
+      "fotoğrafları aç",
+      "görselleri aç",
+      "pictures aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open ~/Resimler 2>/dev/null || xdg-open ~/Pictures",
+    "komut_windows": "explorer %USERPROFILE%\\Pictures",
+    "komut_android": "",
+    "yanit": "Resimler klasörü açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "dosya_videolar": {
+    "id": "dosya_videolar",
+    "kategori": "Dosya",
+    "ad": "Videolar",
+    "tetikleyiciler": [
+      "videolar klasörü",
+      "videoları aç",
+      "filmler klasörü",
+      "videos aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open ~/Videolar 2>/dev/null || xdg-open ~/Videos",
+    "komut_windows": "explorer %USERPROFILE%\\Videos",
+    "komut_android": "",
+    "yanit": "Videolar klasörü açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "dosya_muzik": {
+    "id": "dosya_muzik",
+    "kategori": "Dosya",
+    "ad": "Müzik",
+    "tetikleyiciler": [
+      "müzik klasörü",
+      "müziklerimi aç",
+      "şarkılarımı aç",
+      "music aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open ~/Müzik 2>/dev/null || xdg-open ~/Music",
+    "komut_windows": "explorer %USERPROFILE%\\Music",
+    "komut_android": "",
+    "yanit": "Müzik klasörü açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "dosya_projeler": {
+    "id": "dosya_projeler",
+    "kategori": "Dosya",
+    "ad": "Projeler",
+    "tetikleyiciler": [
+      "projeler klasörü",
+      "projelerimi aç",
+      "kod klasörünü aç",
+      "çalışma klasörünü aç"
+    ],
+    "tur": "kabuk",
+    "komut": "xdg-open ~/Projeler 2>/dev/null || xdg-open ~/Projects 2>/dev/null || xdg-open ~/zk",
+    "komut_windows": "explorer %USERPROFILE%\\Projects",
+    "komut_android": "",
+    "yanit": "Projeler klasörü açılıyor.",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  },
+  "ses_oynat_duraklat": {
+    "id": "ses_oynat_duraklat",
+    "kategori": "Ses",
+    "ad": "Oynat Duraklat",
+    "tetikleyiciler": [
+      "oynat",
+      "duraklat",
+      "müziği duraklat",
+      "müziği oynat",
+      "play pause"
+    ],
+    "tur": "kabuk",
+    "komut": "playerctl play-pause 2>/dev/null || xdotool key XF86AudioPlay",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Medya kontrol edildi.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ses_sonraki": {
+    "id": "ses_sonraki",
+    "kategori": "Ses",
+    "ad": "Sonraki Parça",
+    "tetikleyiciler": [
+      "sonraki şarkı",
+      "sonraki parça",
+      "müziği değiştir",
+      "ileri sar"
+    ],
+    "tur": "kabuk",
+    "komut": "playerctl next 2>/dev/null || xdotool key XF86AudioNext",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Sonraki parçaya geçildi.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ses_onceki": {
+    "id": "ses_onceki",
+    "kategori": "Ses",
+    "ad": "Önceki Parça",
+    "tetikleyiciler": [
+      "önceki şarkı",
+      "önceki parça",
+      "geri al müziği",
+      "bir önceki"
+    ],
+    "tur": "kabuk",
+    "komut": "playerctl previous 2>/dev/null || xdotool key XF86AudioPrev",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Önceki parçaya geçildi.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ekran_kopyala": {
+    "id": "ekran_kopyala",
+    "kategori": "Ekran",
+    "ad": "Kopyala",
+    "tetikleyiciler": [
+      "kopyala",
+      "seçileni kopyala",
+      "ctrl c yap",
+      "kontrol c"
+    ],
+    "tur": "kabuk",
+    "komut": "xdotool key ctrl+c",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Kopyalandı.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ekran_yapistir": {
+    "id": "ekran_yapistir",
+    "kategori": "Ekran",
+    "ad": "Yapıştır",
+    "tetikleyiciler": [
+      "yapıştır",
+      "panoyu yapıştır",
+      "ctrl v yap",
+      "kontrol v"
+    ],
+    "tur": "kabuk",
+    "komut": "xdotool key ctrl+v",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Yapıştırıldı.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ekran_tumunu_sec": {
+    "id": "ekran_tumunu_sec",
+    "kategori": "Ekran",
+    "ad": "Tümünü Seç",
+    "tetikleyiciler": [
+      "tümünü seç",
+      "hepsini seç",
+      "ctrl a yap",
+      "kontrol a"
+    ],
+    "tur": "kabuk",
+    "komut": "xdotool key ctrl+a",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Tümü seçildi.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ekran_geri_al": {
+    "id": "ekran_geri_al",
+    "kategori": "Ekran",
+    "ad": "Geri Al",
+    "tetikleyiciler": [
+      "geri al",
+      "son işlemi geri al",
+      "ctrl z yap",
+      "kontrol z"
+    ],
+    "tur": "kabuk",
+    "komut": "xdotool key ctrl+z",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Geri alındı.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ekran_enter": {
+    "id": "ekran_enter",
+    "kategori": "Ekran",
+    "ad": "Enter",
+    "tetikleyiciler": [
+      "enter bas",
+      "girişe bas",
+      "onayla",
+      "devam et tuşla"
+    ],
+    "tur": "kabuk",
+    "komut": "xdotool key Return",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Enter gönderildi.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "ekran_alt_tab": {
+    "id": "ekran_alt_tab",
+    "kategori": "Ekran",
+    "ad": "Pencere Değiştir",
+    "tetikleyiciler": [
+      "pencere değiştir",
+      "diğer pencereye geç",
+      "alt tab yap",
+      "uygulama değiştir"
+    ],
+    "tur": "kabuk",
+    "komut": "xdotool key Alt+Tab",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "Pencere değiştirildi.",
+    "yetkili_bilincler": [],
+    "hedef_os": "linux",
+    "aktif": true
+  },
+  "guvenlik_portlar": {
+    "id": "guvenlik_portlar",
+    "kategori": "Güvenlik",
+    "ad": "Güvenlik Özeti",
+    "tetikleyiciler": [
+      "güvenlik özeti",
+      "açık portları göster",
+      "portları kontrol et",
+      "güvenlik durumu"
+    ],
+    "tur": "sistem_bilgi",
+    "komut": "guvenlik",
+    "komut_windows": "",
+    "komut_android": "",
+    "yanit": "",
+    "yetkili_bilincler": [],
+    "hedef_os": "hepsi",
+    "aktif": true
+  }
+}

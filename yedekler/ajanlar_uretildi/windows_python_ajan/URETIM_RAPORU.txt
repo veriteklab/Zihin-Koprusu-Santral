@@ -1,0 +1,25 @@
+Zihin Koprusu Istemci Uretim Raporu
+===================================
+
+Uzuv ID: windows_python_ajan
+Uzuv Adi: Windows Python Ajan
+Hedef Tip: windows
+Baglanti Modu: ssh_reverse
+Istenen Paket: BAT
+Gercek Derleme: EVET
+
+Durum: KAYNAK PAKETI HAZIR
+
+Not:
+Bu klasorde calisabilir istemci kaynaklari ve kurulum dosyalari hazirlandi.
+Secilen mod icin calisabilir kaynak istemci dosyalari uretildi.
+
+Uretilen dosyalar:
+- zk_windows_python_ajan.py
+- kur_windows_python_ajan.bat
+- kaldir_windows_python_ajan.bat
+
+Dagitim:
+- Tek klasor yerine DAGITIM_PAKETI.zip dosyasini kullanabilirsiniz.
+- Gercek .apk/.exe gerekiyorsa bu paketi derleme ortaminda tekrar acin.
+

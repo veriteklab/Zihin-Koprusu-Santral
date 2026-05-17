@@ -1,0 +1,184 @@
+sistem:
+  ad: Zihin Köprüsü
+  surum: 7.0.0
+  dil: tr-TR
+  log_dosyasi: loglar/sistem.log
+  sahip: Operatör
+aktif_bilinc: ABİ
+ai:
+  varsayilan_saglayici: gemini
+  model: ''
+  max_gecmis: 20
+  kullan_tor: false
+ses:
+  stt:
+    motor: vosk
+    model_yolu: modeller/vosk-tr/vosk-model-small-tr-0.3
+    ornekleme_hizi: 16000
+  tts:
+    gecici_dosya: /tmp/zk_ses.mp3
+  gurultu_filtreleme: true
+  konusma_hizi: 1.0
+  kisa_yanit_aktif: true
+  turkcelestirme_aktif: true
+  tts_max_karakter: 420
+  tts_max_cumle: 3
+  wake_word_aktif: true
+arayuz:
+  tema: koyu
+  dpi_olcekleme: true
+  ascii_animasyon: true
+  gelistirici_modu: true
+  pencere_genisligi: 1440
+  pencere_yuksekligi: 860
+guvenlik:
+  tehlikeli_komutlarda_onay: true
+gizli: {}
+eklentiler:
+  slot_01:
+    ad: Boş Alan 1
+    simge: ⚙️
+    klasor: eklentiler/slot_01
+  slot_02:
+    ad: Boş Alan 2
+    simge: ⚙️
+    klasor: eklentiler/slot_02
+  slot_03:
+    ad: Boş Alan 3
+    simge: ⚙️
+    klasor: eklentiler/slot_03
+  slot_04:
+    ad: Boş Alan 4
+    simge: ⚙️
+    klasor: eklentiler/slot_04
+  slot_05:
+    ad: Boş Alan 5
+    simge: ⚙️
+    klasor: eklentiler/slot_05
+  slot_06:
+    ad: Boş Alan 6
+    simge: ⚙️
+    klasor: eklentiler/slot_06
+  slot_07:
+    ad: Boş Alan 7
+    simge: ⚙️
+    klasor: eklentiler/slot_07
+  slot_08:
+    ad: Boş Alan 8
+    simge: ⚙️
+    klasor: eklentiler/slot_08
+  slot_09:
+    ad: Boş Alan 9
+    simge: ⚙️
+    klasor: eklentiler/slot_09
+  slot_10:
+    ad: Boş Alan 10
+    simge: ⚙️
+    klasor: eklentiler/slot_10
+bilincler:
+  aktif: ABİ
+  ABİ:
+    rol: sistem
+    tts_motor: piper
+    ses: tr-TR-AhmetNeural
+    yetki: tam
+    aciklama: Sistem yöneticisi, tam yetkili
+    devir_komutlari:
+    - abi devral
+    - abi emir komuta sende
+  BİRADER:
+    rol: operasyon
+    tts_motor: piper
+    ses: tr-TR-AhmetNeural
+    yetki: kontrol
+    aciklama: Operasyon birimi
+    devir_komutlari:
+    - birader devral
+    - birader emir komuta sende
+  BACİ:
+    rol: ana_kontrol
+    tts_motor: piper
+    ses: tr-TR-EmelNeural
+    yetki: tam
+    aciklama: Ana kontrol birimi
+    devir_komutlari:
+    - bacı devral
+    - bacı emir komuta sende
+  ABLA:
+    rol: sohbet
+    tts_motor: piper
+    ses: tr
+    yetki: tam
+    gemini_aktif: true
+    aciklama: Sohbet ve genel asistan
+    devir_komutlari:
+    - abla devral
+    - abla emir komuta sende
+  UFAKLIK:
+    rol: yardimci
+    tts_motor: piper
+    ses: tr
+    yetki: izleyici
+    aciklama: Yardımcı, sınırlı yetki
+    devir_komutlari:
+    - ufaklık devral
+    - ufaklık emir komuta sende
+  DAYI:
+    rol: guvenlik
+    tts_motor: piper
+    ses: tr-TR-AhmetNeural
+    yetki: acil
+    aciklama: Güvenlik ve acil durum
+    devir_komutlari:
+    - dayı devral
+    - dayı emir komuta sende
+  KUZEN:
+    rol: ag_ve_uzuv
+    tts_motor: piper
+    ses: tr-TR-AhmetNeural
+    yetki: kontrol
+    aciklama: Ağ, Tor ve uzuv yönetimi
+    devir_komutlari:
+    - kuzen devral
+    - kuzen emir komuta sende
+  KEYLO:
+    rol: merkez_koordinasyon
+    tts_motor: piper
+    ses: tr-TR-EmelNeural
+    yetki: tam
+    aciklama: Merkez uzuv koordinasyonu ve uzaktan erişim
+    devir_komutlari:
+    - keylo devral
+    - keylo emir komuta sende
+merkez_erisim:
+  varsayilanlar:
+    ssh_reverse: local_ip
+    tor_http: tor_hidden_service
+    tor_https: tor_hidden_service
+    telegram_agent: telegram
+  profiller:
+    local_ip:
+      etiket: Yerel IP
+      tur: local_ip
+      host: 192.168.1.47
+      port: 22
+      etkin: true
+    clearnet:
+      etiket: Clearnet Sunucu
+      tur: clearnet
+      host: ''
+      port: 22
+      etkin: false
+    tor_hidden_service:
+      etiket: Tor Hidden Service
+      tur: tor
+      host: avlihkczlpvz7cd423a3ydmoemkyeviw6xcya4zcxlqa43biaiaftqyd.onion
+      port: 22
+      etkin: true
+      otomatik: true
+    telegram:
+      etiket: Telegram
+      tur: telegram
+      host: '7795689621'
+      port: 0
+      etkin: true

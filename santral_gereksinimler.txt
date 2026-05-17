@@ -1,0 +1,4 @@
+requests>=2.31.0
+gtts>=2.3.2
+edge-tts>=6.1.9
+vosk>=0.3.45

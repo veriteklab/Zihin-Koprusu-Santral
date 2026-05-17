@@ -1,0 +1,15 @@
+[Unit]
+Description=Zihin Koprusu Santral ADB Poller
+After=network-online.target zk-santral.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__WORKDIR__
+ExecStart=/usr/bin/python3 -m zihin.santral_main --config __CONFIG__ adb-poller --server-url __SERVER_URL__ --device-id __DEVICE_ID__
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
