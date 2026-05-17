@@ -101,15 +101,17 @@ public class CallAgentService extends Service {
 
             AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
             if (audioManager != null) {
-                audioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
                 audioManager.setSpeakerphoneOn(true);
                 forceMaxVolume(audioManager, AudioManager.STREAM_MUSIC);
-                forceMaxVolume(audioManager, AudioManager.STREAM_VOICE_CALL);
+                try {
+                    audioManager.setMode(AudioManager.MODE_NORMAL);
+                } catch (Exception exc) {
+                    Log.w(TAG, "audio mode set failed", exc);
+                }
             }
 
-            if (!playWithStream(target, AudioManager.STREAM_VOICE_CALL, "voice_call")) {
-                playWithStream(target, AudioManager.STREAM_MUSIC, "music");
-            }
+            Thread.sleep(1500);
+            playWithStream(target, AudioManager.STREAM_MUSIC, "music_speaker");
             lastPlayedCallId = callId;
         } catch (Exception exc) {
             Log.e(TAG, "prompt playback failed", exc);
