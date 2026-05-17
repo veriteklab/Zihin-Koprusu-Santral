@@ -59,10 +59,9 @@ if [ "${#KAYNAKLAR[@]}" -eq 0 ]; then
 fi
 
 javac \
-  -source 17 \
-  -target 17 \
+  -source 8 \
+  -target 8 \
   -encoding UTF-8 \
-  -bootclasspath "$ANDROID_JAR" \
   -classpath "$ANDROID_JAR" \
   -d "$CLASSES_DIR" \
   "${KAYNAKLAR[@]}"
