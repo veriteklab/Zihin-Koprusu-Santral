@@ -35,29 +35,31 @@ public class CallAgentService extends Service {
             incomingNumber = "";
         }
 
+        final String previousStateSnapshot = previousState;
+        previousState = state;
         final String finalState = state;
         final String finalIncomingNumber = incomingNumber;
-        EXECUTOR.execute(() -> handleCallState(finalState, finalIncomingNumber));
-
-        previousState = state;
+        EXECUTOR.execute(() -> handleCallState(finalState, finalIncomingNumber, previousStateSnapshot));
         return START_NOT_STICKY;
     }
 
-    private void handleCallState(String state, String incomingNumber) {
+    private void handleCallState(String state, String incomingNumber, String previousStateSnapshot) {
         try {
+            Log.i(TAG, "state transition: " + previousStateSnapshot + " -> " + state + " number=" + incomingNumber);
             if (TelephonyManager.EXTRA_STATE_RINGING.equals(state)
-                && !TelephonyManager.EXTRA_STATE_RINGING.equals(previousState)) {
+                && !TelephonyManager.EXTRA_STATE_RINGING.equals(previousStateSnapshot)) {
                 if (AgentConfig.AUTO_ANSWER) {
                     RootActions.autoAnswer();
                 }
             } else if (TelephonyManager.EXTRA_STATE_OFFHOOK.equals(state)
-                && !TelephonyManager.EXTRA_STATE_OFFHOOK.equals(previousState)) {
+                && !TelephonyManager.EXTRA_STATE_OFFHOOK.equals(previousStateSnapshot)) {
                 if (AgentConfig.AUTO_PLAY_PROMPT) {
                     playLatestPrompt();
                 }
             } else if (TelephonyManager.EXTRA_STATE_IDLE.equals(state)
-                && !TelephonyManager.EXTRA_STATE_IDLE.equals(previousState)) {
+                && !TelephonyManager.EXTRA_STATE_IDLE.equals(previousStateSnapshot)) {
                 lastPlayedCallId = "";
+                Log.i(TAG, "call returned to idle");
             }
         } catch (Exception exc) {
             Log.e(TAG, "call flow failed", exc);
@@ -67,7 +69,7 @@ public class CallAgentService extends Service {
     private void playLatestPrompt() {
         try {
             String callId = null;
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 20; i++) {
                 callId = SantralApi.fetchLatestActiveCallId();
                 if (callId != null && !callId.isEmpty()) {
                     break;
@@ -82,33 +84,74 @@ public class CallAgentService extends Service {
                 Log.i(TAG, "prompt already played for " + callId);
                 return;
             }
+            Log.i(TAG, "playing prompt for call " + callId);
             byte[] audio = SantralApi.fetchPromptAudio(callId);
             if (audio == null || audio.length == 0) {
+                Log.w(TAG, "prompt audio empty for " + callId);
                 return;
             }
             File target = new File(getCacheDir(), callId + "_prompt.mp3");
             try (FileOutputStream out = new FileOutputStream(target)) {
                 out.write(audio);
             }
+            Log.i(TAG, "prompt cached at " + target.getAbsolutePath() + " bytes=" + audio.length);
 
             AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
             if (audioManager != null) {
+                audioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
                 audioManager.setSpeakerphoneOn(true);
-                audioManager.setMode(AudioManager.MODE_NORMAL);
+                forceMaxVolume(audioManager, AudioManager.STREAM_MUSIC);
+                forceMaxVolume(audioManager, AudioManager.STREAM_VOICE_CALL);
             }
 
-            MediaPlayer player = new MediaPlayer();
-            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            player.setDataSource(target.getAbsolutePath());
-            player.setOnCompletionListener(mp -> {
-                mp.release();
-                stopSelf();
-            });
-            player.prepare();
-            player.start();
+            if (!playWithStream(target, AudioManager.STREAM_VOICE_CALL, "voice_call")) {
+                playWithStream(target, AudioManager.STREAM_MUSIC, "music");
+            }
             lastPlayedCallId = callId;
         } catch (Exception exc) {
             Log.e(TAG, "prompt playback failed", exc);
+        }
+    }
+
+    private boolean playWithStream(File target, int streamType, String label) {
+        MediaPlayer player = null;
+        try {
+            player = new MediaPlayer();
+            player.setAudioStreamType(streamType);
+            player.setDataSource(target.getAbsolutePath());
+            final MediaPlayer finalPlayer = player;
+            player.setOnCompletionListener(mp -> {
+                Log.i(TAG, "prompt completed via " + label);
+                mp.release();
+                if (finalPlayer == mp) {
+                    stopSelf();
+                }
+            });
+            player.prepare();
+            player.start();
+            Log.i(TAG, "prompt started via " + label + " stream=" + streamType);
+            return true;
+        } catch (Exception exc) {
+            Log.w(TAG, "prompt start failed via " + label, exc);
+            if (player != null) {
+                try {
+                    player.release();
+                } catch (Exception ignored) {
+                }
+            }
+            return false;
+        }
+    }
+
+    private void forceMaxVolume(AudioManager audioManager, int streamType) {
+        try {
+            int max = audioManager.getStreamMaxVolume(streamType);
+            if (max > 0) {
+                audioManager.setStreamVolume(streamType, max, 0);
+                Log.i(TAG, "volume maxed stream=" + streamType + " max=" + max);
+            }
+        } catch (Exception exc) {
+            Log.w(TAG, "volume set failed stream=" + streamType, exc);
         }
     }
 
