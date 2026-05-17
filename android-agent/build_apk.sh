@@ -10,6 +10,7 @@ ANDROID_JAR="$PLATFORM_DIR/android.jar"
 APP_DIR="$KOK/app"
 MANIFEST="$APP_DIR/src/main/AndroidManifest.xml"
 JAVA_DIR="$APP_DIR/src/main/java"
+ASSETS_DIR="$APP_DIR/src/main/assets"
 BUILD_DIR="$KOK/build"
 SRC_COPY_DIR="$BUILD_DIR/src-java"
 CLASSES_DIR="$BUILD_DIR/classes"
@@ -79,6 +80,7 @@ jar --create --file "$CLASSES_JAR" -C "$CLASSES_DIR" .
   -f \
   -M "$MANIFEST" \
   -I "$ANDROID_JAR" \
+  -A "$ASSETS_DIR" \
   -F "$UNSIGNED_APK"
 
 (cd "$DEX_DIR" && "$AAPT" add "$UNSIGNED_APK" classes.dex)

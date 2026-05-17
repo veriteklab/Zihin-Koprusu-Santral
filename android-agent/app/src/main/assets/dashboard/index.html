@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="theme-color" content="#07110d" />
+    <title>Santral Panel</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+
+    <main class="shell">
+      <section class="status-strip panel">
+        <div class="strip-block">
+          <span class="eyebrow">Panel Modu</span>
+          <strong id="strip-mode">LIVE</strong>
+        </div>
+        <div class="strip-block">
+          <span class="eyebrow">Cihaz</span>
+          <strong id="strip-device">zk-santral-agent</strong>
+        </div>
+        <div class="strip-block">
+          <span class="eyebrow">Host</span>
+          <strong id="strip-host">--</strong>
+        </div>
+        <div class="strip-block">
+          <span class="eyebrow">Dinleme</span>
+          <strong id="strip-listening">--</strong>
+        </div>
+        <div class="strip-block">
+          <span class="eyebrow">Son Olay</span>
+          <strong id="strip-last-event">veri yok</strong>
+        </div>
+        <div class="strip-block strip-link">
+          <span class="eyebrow">Baglanti</span>
+          <strong id="link-state">DEMO</strong>
+        </div>
+        <button id="game-toggle" class="strip-block strip-button" type="button">
+          <span class="eyebrow">Mini Oyun</span>
+          <strong>AC</strong>
+        </button>
+      </section>
+
+      <section class="hero panel">
+        <div>
+          <div class="eyebrow">ALWAYS-ON SERVER TERMINAL</div>
+          <h1 id="hero-title">SANTRAL CORE PANEL</h1>
+          <p class="copy">
+            Sunucu yuku, servis sagligi ve kritik durumlar icin tam ekran
+            Android terminali.
+          </p>
+        </div>
+        <div class="hero-metrics">
+          <div class="hero-chip">
+            <span>Durum</span>
+            <strong id="global-state">LIVE</strong>
+          </div>
+          <div class="hero-chip">
+            <span>Son Veri</span>
+            <strong id="last-updated">--:--:--</strong>
+          </div>
+          <div class="hero-chip">
+            <span>Load Avg</span>
+            <strong id="avg-load">0.00</strong>
+          </div>
+          <div class="hero-chip">
+            <span>Son 10 Cagri</span>
+            <strong id="recent-calls">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="top-grid">
+        <article class="panel summary-panel">
+          <span class="eyebrow">Genel Ozet</span>
+          <div class="summary-grid">
+            <div class="metric-card">
+              <span>Sunucu</span>
+              <strong id="server-count">0</strong>
+            </div>
+            <div class="metric-card">
+              <span>Alarm</span>
+              <strong id="critical-count">0</strong>
+            </div>
+            <div class="metric-card">
+              <span>Ortalama CPU</span>
+              <strong id="avg-cpu">%0</strong>
+            </div>
+            <div class="metric-card">
+              <span>Ortalama RAM</span>
+              <strong id="avg-ram">%0</strong>
+            </div>
+            <div class="metric-card">
+              <span>Aktif Cagri</span>
+              <strong id="active-calls">0</strong>
+            </div>
+            <div class="metric-card">
+              <span>1s Olay</span>
+              <strong id="events-hour">0</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel primary-panel">
+          <span class="eyebrow">Birincil Hedef</span>
+          <div id="primary-name" class="primary-name">Demo Sunucu</div>
+          <div id="primary-meta" class="primary-meta">CPU 42% | RAM 58% | Disk 67%</div>
+          <div class="primary-state-row">
+            <div id="primary-state" class="server-state ok">OK</div>
+            <div id="primary-host" class="primary-host">HOST --</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-line">
+              <label>CPU</label>
+              <div class="bar"><i id="primary-cpu-bar"></i></div>
+            </div>
+            <div class="bar-line">
+              <label>RAM</label>
+              <div class="bar"><i id="primary-ram-bar"></i></div>
+            </div>
+            <div class="bar-line">
+              <label>DISK</label>
+              <div class="bar"><i id="primary-disk-bar"></i></div>
+            </div>
+          </div>
+          <div class="primary-footer">
+            <div>
+              <span class="eyebrow">Boot</span>
+              <strong id="boot-age">--</strong>
+            </div>
+            <div>
+              <span class="eyebrow">Maks Disk</span>
+              <strong id="max-disk">%0</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="bottom-grid">
+        <section class="panel servers-panel">
+          <div class="panel-head">
+            <span class="eyebrow">Sunucular</span>
+            <span class="tag">AUTO REFRESH</span>
+          </div>
+          <div id="server-list" class="server-list"></div>
+        </section>
+
+        <section class="panel side-panel">
+          <div class="panel-head">
+            <span class="eyebrow">Olay Akisi</span>
+            <span class="tag">LIVE</span>
+          </div>
+          <div id="event-stream" class="event-stream"></div>
+        </section>
+      </section>
+    </main>
+
+    <section id="game-modal" class="game-modal hidden">
+      <div class="game-shell panel">
+        <div class="game-head">
+          <div>
+            <span class="eyebrow">SANTRAL ARCADE</span>
+            <h2>Snake</h2>
+          </div>
+          <button id="game-close" class="game-close" type="button">KAPAT</button>
+        </div>
+        <div class="game-hud">
+          <div class="hud-card">
+            <span class="eyebrow">Skor</span>
+            <strong id="game-score">0</strong>
+          </div>
+          <div class="hud-card">
+            <span class="eyebrow">En Iyi</span>
+            <strong id="game-best">0</strong>
+          </div>
+          <div class="hud-card">
+            <span class="eyebrow">Durum</span>
+            <strong id="game-state">Hazir</strong>
+          </div>
+        </div>
+        <canvas id="game-canvas" width="960" height="420"></canvas>
+        <div class="game-help">
+          Baslatmak icin dokun. Yonu degistirmek icin ekranda dokun ya da ok tuslarini kullan.
+        </div>
+      </div>
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

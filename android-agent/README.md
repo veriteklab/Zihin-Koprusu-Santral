@@ -7,6 +7,7 @@ Amac:
 - backend'e `incoming`, `answered`, `hangup` olaylarini gondermek
 - answered olduktan sonra backend'den `prompt-audio` almak
 - cihazda `MediaPlayer` ile anonsu oynatmak
+- ayni cihazda tam ekran bir `Santral Core Panel` kiosk arayuzu gostermek
 
 ## Su anki durum
 
@@ -15,6 +16,9 @@ Bu ilk iskelet:
 - PHONE_STATE receiver ekler
 - root ile otomatik cevap denemesi yapar
 - backend'den ses dosyasi cekip `MediaPlayer` ile calmayi dener
+- `file:///android_asset/dashboard/index.html` uzerinden tam ekran panel acar
+- `immersive sticky` ve `lock task` ile kiosk davranisi dener
+- boot sonrasi uygulamayi tekrar kaldirir
 
 ## Gerekli duzenlemeler
 
@@ -61,7 +65,7 @@ Artifact icinde:
 ## Lokal build fallback
 
 ```bash
-cd android-agent
+cd santral/android-agent
 chmod +x build_apk.sh install_apk.sh
 ./build_apk.sh
 ```
@@ -93,6 +97,46 @@ Bu ajan su uc noktalari kullanir:
 
 - `POST /api/v1/events`
 - `GET /api/v1/calls/<call_id>/prompt-audio?token=...`
+- `GET /api/status`
+
+## Panel verisi
+
+Panel, backend'den `GET /api/status` ile veri ceker.
+
+Ek olarak istenirse backend veri dizininde su dosya tutularak birden fazla sunucu da
+ayni ekranda gosterilebilir:
+
+- `veri/santral/panel_servers.json`
+
+Ornek:
+
+```json
+{
+  "servers": [
+    {
+      "name": "db-main",
+      "host": "10.0.0.12",
+      "cpu": 54,
+      "ram": 71,
+      "disk": 82,
+      "net": "RX 3.4 MB | TX 2.1 MB",
+      "uptime": "14d 6h",
+      "load": 1.82
+    }
+  ]
+}
+```
+
+Daha temiz yol, her Linux sunucuda merkezi santrale metrik itmek:
+
+```bash
+python3 -m santral.main --config santral_ayar.json panel-push \
+  --server-url http://MERKEZ_IP:8767 \
+  --token zk-santral-yerel-test
+```
+
+Bu komut `cpu`, `ram`, `disk`, `load`, `uptime` ve `net` verisini
+`POST /api/panel/servers` ile merkeze yollar.
 
 ## Not
 
