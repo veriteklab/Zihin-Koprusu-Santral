@@ -69,10 +69,13 @@ public class CallAgentService extends Service {
     private void playLatestPrompt() {
         try {
             String callId = null;
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 60; i++) {
                 callId = SantralApi.fetchLatestActiveCallId();
                 if (callId != null && !callId.isEmpty()) {
                     break;
+                }
+                if (i == 0 || (i + 1) % 10 == 0) {
+                    Log.i(TAG, "latest call waiting attempt=" + (i + 1));
                 }
                 Thread.sleep(500);
             }

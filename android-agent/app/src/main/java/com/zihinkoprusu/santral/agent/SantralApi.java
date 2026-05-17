@@ -41,11 +41,30 @@ public final class SantralApi {
     }
 
     public static String fetchLatestActiveCallId() throws Exception {
+        String callId = fetchLatestCallId("active");
+        if (callId != null && !callId.isEmpty()) {
+            return callId;
+        }
+        callId = fetchLatestCallId("answered");
+        if (callId != null && !callId.isEmpty()) {
+            return callId;
+        }
+        return fetchLatestCallId("");
+    }
+
+    public static String fetchLatestCallId(String state) throws Exception {
+        StringBuilder path = new StringBuilder();
+        path.append(AgentConfig.SERVER_URL)
+            .append("/api/v1/devices/")
+            .append(AgentConfig.DEVICE_ID)
+            .append("/latest-call?token=")
+            .append(AgentConfig.TOKEN);
+        if (state != null && !state.isEmpty()) {
+            path.append("&state=").append(state);
+        }
+
         URL url = new URL(
-            AgentConfig.SERVER_URL
-                + "/api/v1/devices/" + AgentConfig.DEVICE_ID
-                + "/latest-call?token=" + AgentConfig.TOKEN
-                + "&state=active"
+            path.toString()
         );
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
