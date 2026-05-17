@@ -79,8 +79,7 @@ jar --create --file "$CLASSES_JAR" -C "$CLASSES_DIR" .
   -f \
   -M "$MANIFEST" \
   -I "$ANDROID_JAR" \
-  -F "$UNSIGNED_APK" \
-  "$APP_DIR/src/main"
+  -F "$UNSIGNED_APK"
 
 (cd "$DEX_DIR" && "$AAPT" add "$UNSIGNED_APK" classes.dex)
 
