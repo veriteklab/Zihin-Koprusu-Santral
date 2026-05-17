@@ -117,6 +117,22 @@ class SantralSunucu:
             "meta": kayit.meta,
         }
 
+    def cihaz_son_cagri_getir(self, device_id: str, state: str = "") -> dict[str, Any]:
+        kayit = self.depo.son_cagri(device_id=device_id, state=state)
+        if kayit is None:
+            return {"ok": False, "error": "not_found"}
+        return {
+            "ok": True,
+            "call_id": kayit.call_id,
+            "device_id": kayit.device_id,
+            "phone_number": kayit.phone_number,
+            "state": kayit.state,
+            "recording_path": kayit.recording_path,
+            "transcript": kayit.transcript,
+            "events": kayit.events,
+            "meta": kayit.meta,
+        }
+
     def call_menu_isle(self, call_id: str, tus: str) -> dict[str, Any]:
         kayit = self.depo.yukle(call_id)
         if kayit is None:
@@ -207,6 +223,16 @@ class SantralSunucu:
                     parsed = urlparse(self.path)
                     if parsed.path == "/health":
                         self._json(HTTPStatus.OK, {"ok": True, "service": "zk-santral"})
+                        return
+                    eslesme = re.fullmatch(r"/api/v1/devices/([^/]+)/latest-call", parsed.path)
+                    if eslesme:
+                        query = parse_qs(parsed.query)
+                        token = (query.get("token") or [""])[0]
+                        if not self._yetki_var(token):
+                            self._json(HTTPStatus.FORBIDDEN, {"ok": False, "error": "forbidden"})
+                            return
+                        state = (query.get("state") or [""])[0]
+                        self._json(HTTPStatus.OK, app.cihaz_son_cagri_getir(eslesme.group(1), state))
                         return
                     eslesme = re.fullmatch(r"/api/v1/calls/([^/]+)/prompt-audio", parsed.path)
                     if eslesme:

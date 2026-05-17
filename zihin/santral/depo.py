@@ -47,6 +47,34 @@ class SantralDepo:
         veri = json.loads(yol.read_text(encoding="utf-8"))
         return CagriKaydi(**veri)
 
+    def tum_cagrilar(self) -> list[CagriKaydi]:
+        sonuc: list[CagriKaydi] = []
+        if not self.cagri_kok.exists():
+            return sonuc
+        for klasor in sorted(self.cagri_kok.iterdir()):
+            if not klasor.is_dir():
+                continue
+            yol = klasor / "kayit.json"
+            if not yol.exists():
+                continue
+            try:
+                veri = json.loads(yol.read_text(encoding="utf-8"))
+                sonuc.append(CagriKaydi(**veri))
+            except Exception:
+                continue
+        return sonuc
+
+    def son_cagri(self, device_id: str = "", state: str = "") -> CagriKaydi | None:
+        adaylar = self.tum_cagrilar()
+        if device_id:
+            adaylar = [x for x in adaylar if x.device_id == device_id]
+        if state:
+            adaylar = [x for x in adaylar if x.state == state]
+        if not adaylar:
+            return None
+        adaylar.sort(key=lambda x: x.updated_at, reverse=True)
+        return adaylar[0]
+
     def kaydet(self, kayit: CagriKaydi) -> None:
         kayit.updated_at = utc_simdi()
         self.meta_yolu(kayit.call_id).write_text(

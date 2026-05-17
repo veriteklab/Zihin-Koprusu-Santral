@@ -40,6 +40,41 @@ public final class SantralApi {
         conn.disconnect();
     }
 
+    public static String fetchLatestActiveCallId() throws Exception {
+        URL url = new URL(
+            AgentConfig.SERVER_URL
+                + "/api/v1/devices/" + AgentConfig.DEVICE_ID
+                + "/latest-call?token=" + AgentConfig.TOKEN
+                + "&state=active"
+        );
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setConnectTimeout(10000);
+        conn.setReadTimeout(10000);
+
+        int code = conn.getResponseCode();
+        if (code != 200) {
+            conn.disconnect();
+            return null;
+        }
+
+        try (InputStream in = conn.getInputStream();
+             ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+            byte[] buffer = new byte[4096];
+            int read;
+            while ((read = in.read(buffer)) != -1) {
+                out.write(buffer, 0, read);
+            }
+            JSONObject json = new JSONObject(out.toString(StandardCharsets.UTF_8.name()));
+            if (!json.optBoolean("ok", false)) {
+                return null;
+            }
+            return json.optString("call_id", null);
+        } finally {
+            conn.disconnect();
+        }
+    }
+
     public static byte[] fetchPromptAudio(String callId) throws Exception {
         URL url = new URL(
             AgentConfig.SERVER_URL

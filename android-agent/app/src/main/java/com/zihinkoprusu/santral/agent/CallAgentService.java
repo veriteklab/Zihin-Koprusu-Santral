@@ -10,12 +10,15 @@ import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class CallAgentService extends Service {
     private static final String TAG = "ZKSantralAgent";
+    private static final ExecutorService EXECUTOR = Executors.newSingleThreadExecutor();
 
-    private String currentCallId = "";
     private String previousState = TelephonyManager.EXTRA_STATE_IDLE;
+    private String lastPlayedCallId = "";
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -32,40 +35,53 @@ public class CallAgentService extends Service {
             incomingNumber = "";
         }
 
-        try {
-            if (TelephonyManager.EXTRA_STATE_RINGING.equals(state)
-                && !TelephonyManager.EXTRA_STATE_RINGING.equals(previousState)) {
-                currentCallId = String.valueOf(System.currentTimeMillis() / 1000L);
-                SantralApi.postEvent(currentCallId, "incoming", incomingNumber, "ringing");
-                if (AgentConfig.AUTO_ANSWER) {
-                    RootActions.autoAnswer();
-                }
-            } else if (TelephonyManager.EXTRA_STATE_OFFHOOK.equals(state)
-                && !TelephonyManager.EXTRA_STATE_OFFHOOK.equals(previousState)) {
-                if (currentCallId.isEmpty()) {
-                    currentCallId = String.valueOf(System.currentTimeMillis() / 1000L);
-                }
-                SantralApi.postEvent(currentCallId, "answered", incomingNumber, "active");
-                if (AgentConfig.AUTO_PLAY_PROMPT) {
-                    playPrompt(currentCallId);
-                }
-            } else if (TelephonyManager.EXTRA_STATE_IDLE.equals(state)
-                && !TelephonyManager.EXTRA_STATE_IDLE.equals(previousState)) {
-                if (!currentCallId.isEmpty()) {
-                    SantralApi.postEvent(currentCallId, "hangup", incomingNumber, "idle");
-                }
-                currentCallId = "";
-            }
-        } catch (Exception exc) {
-            Log.e(TAG, "call flow failed", exc);
-        }
+        final String finalState = state;
+        final String finalIncomingNumber = incomingNumber;
+        EXECUTOR.execute(() -> handleCallState(finalState, finalIncomingNumber));
 
         previousState = state;
         return START_NOT_STICKY;
     }
 
-    private void playPrompt(String callId) {
+    private void handleCallState(String state, String incomingNumber) {
         try {
+            if (TelephonyManager.EXTRA_STATE_RINGING.equals(state)
+                && !TelephonyManager.EXTRA_STATE_RINGING.equals(previousState)) {
+                if (AgentConfig.AUTO_ANSWER) {
+                    RootActions.autoAnswer();
+                }
+            } else if (TelephonyManager.EXTRA_STATE_OFFHOOK.equals(state)
+                && !TelephonyManager.EXTRA_STATE_OFFHOOK.equals(previousState)) {
+                if (AgentConfig.AUTO_PLAY_PROMPT) {
+                    playLatestPrompt();
+                }
+            } else if (TelephonyManager.EXTRA_STATE_IDLE.equals(state)
+                && !TelephonyManager.EXTRA_STATE_IDLE.equals(previousState)) {
+                lastPlayedCallId = "";
+            }
+        } catch (Exception exc) {
+            Log.e(TAG, "call flow failed", exc);
+        }
+    }
+
+    private void playLatestPrompt() {
+        try {
+            String callId = null;
+            for (int i = 0; i < 6; i++) {
+                callId = SantralApi.fetchLatestActiveCallId();
+                if (callId != null && !callId.isEmpty()) {
+                    break;
+                }
+                Thread.sleep(500);
+            }
+            if (callId == null || callId.isEmpty()) {
+                Log.w(TAG, "latest active call not found");
+                return;
+            }
+            if (callId.equals(lastPlayedCallId)) {
+                Log.i(TAG, "prompt already played for " + callId);
+                return;
+            }
             byte[] audio = SantralApi.fetchPromptAudio(callId);
             if (audio == null || audio.length == 0) {
                 return;
@@ -78,11 +94,11 @@ public class CallAgentService extends Service {
             AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
             if (audioManager != null) {
                 audioManager.setSpeakerphoneOn(true);
-                audioManager.setMode(AudioManager.MODE_IN_CALL);
+                audioManager.setMode(AudioManager.MODE_NORMAL);
             }
 
             MediaPlayer player = new MediaPlayer();
-            player.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
+            player.setAudioStreamType(AudioManager.STREAM_MUSIC);
             player.setDataSource(target.getAbsolutePath());
             player.setOnCompletionListener(mp -> {
                 mp.release();
@@ -90,6 +106,7 @@ public class CallAgentService extends Service {
             });
             player.prepare();
             player.start();
+            lastPlayedCallId = callId;
         } catch (Exception exc) {
             Log.e(TAG, "prompt playback failed", exc);
         }
