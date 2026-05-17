@@ -14,6 +14,7 @@ BUILD_DIR="$KOK/build"
 SRC_COPY_DIR="$BUILD_DIR/src-java"
 CLASSES_DIR="$BUILD_DIR/classes"
 DEX_DIR="$BUILD_DIR/dex"
+CLASSES_JAR="$BUILD_DIR/classes.jar"
 UNSIGNED_APK="$BUILD_DIR/zk-santral-agent-unsigned.apk"
 ALIGNED_APK="$BUILD_DIR/zk-santral-agent-aligned.apk"
 FINAL_APK="$BUILD_DIR/zk-santral-agent-debug.apk"
@@ -24,7 +25,7 @@ D8="$BUILD_TOOLS/d8"
 ZIPALIGN="$BUILD_TOOLS/zipalign"
 APKSIGNER="$BUILD_TOOLS/apksigner"
 
-for bin in "$AAPT" "$D8" "$ZIPALIGN" "$APKSIGNER" javac keytool; do
+for bin in "$AAPT" "$D8" "$ZIPALIGN" "$APKSIGNER" javac keytool jar; do
   if ! command -v "$bin" >/dev/null 2>&1 && [ ! -x "$bin" ]; then
     echo "[android-agent] eksik arac: $bin" >&2
     exit 1
@@ -66,11 +67,13 @@ javac \
   -d "$CLASSES_DIR" \
   "${KAYNAKLAR[@]}"
 
+jar --create --file "$CLASSES_JAR" -C "$CLASSES_DIR" .
+
 "$D8" \
   --lib "$ANDROID_JAR" \
   --min-api 23 \
   --output "$DEX_DIR" \
-  "$CLASSES_DIR"
+  "$CLASSES_JAR"
 
 "$AAPT" package \
   -f \
