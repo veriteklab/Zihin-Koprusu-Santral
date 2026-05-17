@@ -101,12 +101,12 @@ public class CallAgentService extends Service {
 
             AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
             if (audioManager != null) {
-                audioManager.setSpeakerphoneOn(true);
                 forceMaxVolume(audioManager, AudioManager.STREAM_MUSIC);
+                forceMaxVolume(audioManager, AudioManager.STREAM_VOICE_CALL);
                 try {
-                    audioManager.setMode(AudioManager.MODE_NORMAL);
-                } catch (Exception exc) {
-                    Log.w(TAG, "audio mode set failed", exc);
+                    VendorAudioRoute.prepare(audioManager);
+                } catch (Throwable exc) {
+                    Log.w(TAG, "vendor route prepare failed", exc);
                 }
             }
 
@@ -127,6 +127,8 @@ public class CallAgentService extends Service {
             final MediaPlayer finalPlayer = player;
             player.setOnCompletionListener(mp -> {
                 Log.i(TAG, "prompt completed via " + label);
+                AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+                VendorAudioRoute.restore(audioManager);
                 mp.release();
                 if (finalPlayer == mp) {
                     stopSelf();
